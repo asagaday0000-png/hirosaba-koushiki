@@ -14,9 +14,10 @@
         body {
             margin: 0;
             font-family: Arial, "Noto Sans JP", sans-serif;
-            background: #111111;
-            color: #ffffff;
+            background: #ffffff;
+            color: #222222;
         }
+
 
         /* =========================
            ヘッダー
@@ -35,12 +36,12 @@
             background:
                 radial-gradient(
                     circle at center,
-                    #8b2020 0%,
-                    #3d1515 35%,
-                    #111111 75%
+                    #ff7777 0%,
+                    #f04444 40%,
+                    #d62828 75%
                 );
 
-            border-bottom: 1px solid #3a2020;
+            border-bottom: 5px solid #b91f1f;
         }
 
         .logo {
@@ -48,9 +49,8 @@
             max-width: 80%;
             height: auto;
 
-            filter: drop-shadow(
-                0 10px 25px rgba(0, 0, 0, 0.5)
-            );
+            filter:
+                drop-shadow(0 8px 12px rgba(0, 0, 0, 0.25));
 
             margin-bottom: 25px;
         }
@@ -58,11 +58,16 @@
         header p {
             margin: 0;
 
-            color: #dddddd;
+            color: #ffffff;
 
             font-size: 20px;
 
+            font-weight: bold;
+
             letter-spacing: 2px;
+
+            text-shadow:
+                0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
 
@@ -84,6 +89,8 @@
             font-size: 34px;
 
             text-align: center;
+
+            color: #222222;
         }
 
         h2::after {
@@ -91,14 +98,14 @@
 
             display: block;
 
-            width: 50px;
-            height: 3px;
+            width: 55px;
+            height: 4px;
 
             margin: 15px auto 0;
 
-            background: #d63b3b;
+            background: #e63232;
 
-            border-radius: 10px;
+            border-radius: 20px;
         }
 
 
@@ -107,7 +114,7 @@
         ========================= */
 
         .description {
-            color: #cccccc;
+            color: #555555;
 
             line-height: 2;
 
@@ -128,36 +135,41 @@
         }
 
         .join-box {
-            background: #181818;
+            background: #ffffff;
 
-            border: 1px solid #2d2d2d;
+            border: 2px solid #eeeeee;
 
-            border-radius: 14px;
+            border-radius: 16px;
 
             padding: 30px;
 
             margin-top: 25px;
 
             box-shadow:
-                0 10px 30px rgba(0, 0, 0, 0.25);
+                0 8px 25px rgba(0, 0, 0, 0.08);
 
             transition: 0.25s;
         }
 
         .join-box:hover {
-            transform: translateY(-3px);
+            transform: translateY(-4px);
 
-            border-color: #693737;
+            border-color: #ffb1b1;
+
+            box-shadow:
+                0 12px 30px rgba(214, 50, 50, 0.12);
         }
 
         .join-box h3 {
             margin: 0 0 25px;
 
             font-size: 25px;
+
+            color: #d62828;
         }
 
         .join-box p {
-            color: #aaaaaa;
+            color: #666666;
         }
 
 
@@ -174,11 +186,11 @@
 
             align-items: center;
 
-            min-height: 48px;
+            min-height: 50px;
 
-            background: #101010;
+            background: #f7f7f7;
 
-            border: 1px solid #303030;
+            border: 1px solid #dddddd;
 
             border-radius: 8px;
 
@@ -190,7 +202,7 @@
 
             padding: 12px 15px;
 
-            color: #eeeeee;
+            color: #333333;
 
             word-break: break-all;
         }
@@ -207,23 +219,27 @@
 
             padding: 9px 15px;
 
-            background: #a52d2d;
+            background: #e63232;
 
             color: white;
 
             border: none;
 
-            border-radius: 6px;
+            border-radius: 7px;
 
             cursor: pointer;
 
             font-size: 14px;
 
+            font-weight: bold;
+
             transition: 0.2s;
         }
 
         .copy-button:hover {
-            background: #c43b3b;
+            background: #c92525;
+
+            transform: translateY(-1px);
         }
 
         .copy-button:active {
@@ -232,7 +248,7 @@
 
 
         /* =========================
-           コピー完了メッセージ
+           コピー完了
         ========================= */
 
         .copy-message {
@@ -245,13 +261,15 @@
 
             padding: 8px 12px;
 
-            background: #a52d2d;
+            background: #e63232;
 
             color: white;
 
-            border-radius: 6px;
+            border-radius: 7px;
 
             font-size: 13px;
+
+            font-weight: bold;
 
             opacity: 0;
 
@@ -274,13 +292,13 @@
 
             padding: 15px;
 
-            background: #211515;
+            background: #fff1f1;
 
-            border-left: 3px solid #d63b3b;
+            border-left: 4px solid #e63232;
 
-            color: #cccccc !important;
+            color: #555555 !important;
 
-            border-radius: 5px;
+            border-radius: 7px;
         }
 
 
@@ -293,9 +311,11 @@
 
             text-align: center;
 
-            border-top: 1px solid #242424;
+            background: #f7f7f7;
 
-            color: #777777;
+            border-top: 1px solid #eeeeee;
+
+            color: #888888;
 
             font-size: 14px;
         }
