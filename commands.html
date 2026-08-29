@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ひろ鯖 - コマンド一覧</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            font-family:
+                Arial,
+                "Noto Sans JP",
+                sans-serif;
+
+            background: #ffffff;
+
+            color: #333333;
+
+            overflow-x: hidden;
+
+        }
+
+
+        /* =========================
+           背景
+        ========================= */
+
+        .background {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            z-index: -1;
+
+            overflow: hidden;
+
+            background: #ffffff;
+
+        }
+
+
+        .light {
+
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            border-radius: 50%;
+
+            filter: blur(110px);
+
+            opacity: 0.16;
+
+        }
+
+
+        .light.one {
+
+            background: #ffb49f;
+
+            top: -180px;
+            left: -150px;
+
+            animation:
+                moveLight1
+                16s
+                ease-in-out
+                infinite
+                alternate;
+
+        }
+
+
+        .light.two {
+
+            background: #ffcabb;
+
+            top: 35%;
+            right: -220px;
+
+            animation:
+                moveLight2
+                19s
+                ease-in-out
+                infinite
+                alternate;
+
+        }
+
+
+        .light.three {
+
+            background: #ffe0d5;
+
+            bottom: -250px;
+            left: 30%;
+
+            animation:
+                moveLight3
+                22s
+                ease-in-out
+                infinite
+                alternate;
+
+        }
+
+
+        @keyframes moveLight1 {
+
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(130px, 80px);
+            }
+
+        }
+
+
+        @keyframes moveLight2 {
+
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(-120px, -70px);
+            }
+
+        }
+
+
+        @keyframes moveLight3 {
+
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(100px, -80px);
+            }
+
+        }
+
+
+        /* =========================
+           ヘッダー
+        ========================= */
+
+        header {
+
+            padding: 70px 20px 55px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(255, 247, 244, 0.65),
+                    rgba(255, 255, 255, 0.35)
+                );
+
+            border-bottom:
+                1px solid #f3ddd6;
+
+        }
+
+
+        header h1 {
+
+            margin: 0;
+
+            color: #e85d3f;
+
+            font-size: 40px;
+
+        }
+
+
+        header p {
+
+            margin: 12px 0 0;
+
+            color: #777777;
+
+            font-size: 16px;
+
+        }
+
+
+        /* =========================
+           メイン
+        ========================= */
+
+        .content {
+
+            max-width: 850px;
+
+            margin: 0 auto;
+
+            padding:
+                55px
+                20px
+                80px;
+
+        }
+
+
+        /* =========================
+           戻るボタン
+        ========================= */
+
+        .back-button {
+
+            display: inline-block;
+
+            margin-bottom: 35px;
+
+            padding:
+                10px
+                18px;
+
+            background: #fff1ec;
+
+            color: #e85d3f;
+
+            text-decoration: none;
+
+            border-radius: 9px;
+
+            font-weight: bold;
+
+            transition: 0.2s;
+
+        }
+
+
+        .back-button:hover {
+
+            background: #e85d3f;
+
+            color: white;
+
+            transform: translateX(-3px);
+
+        }
+
+
+        /* =========================
+           見出し
+        ========================= */
+
+        h2 {
+
+            margin:
+                0
+                0
+                35px;
+
+            text-align: center;
+
+            font-size: 30px;
+
+            color: #333333;
+
+        }
+
+
+        h2::after {
+
+            content: "";
+
+            display: block;
+
+            width: 50px;
+
+            height: 4px;
+
+            margin:
+                12px
+                auto
+                0;
+
+            background: #e85d3f;
+
+            border-radius: 10px;
+
+        }
+
+
+        /* =========================
+           コマンドカード
+        ========================= */
+
+        .command-card {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 20px;
+
+            padding:
+                22px
+                25px;
+
+            margin-bottom: 15px;
+
+            background:
+                rgba(255, 255, 255, 0.94);
+
+            border:
+                1px solid #eeeeee;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0
+                6px
+                20px
+                rgba(0, 0, 0, 0.05);
+
+            transition:
+                transform 0.2s,
+                box-shadow 0.2s,
+                border-color 0.2s;
+
+        }
+
+
+        .command-card:hover {
+
+            transform:
+                translateY(-3px);
+
+            border-color:
+                #f2c2b5;
+
+            box-shadow:
+                0
+                9px
+                25px
+                rgba(232, 93, 63, 0.09);
+
+        }
+
+
+        /* =========================
+           コマンド名
+        ========================= */
+
+        .command {
+
+            flex-shrink: 0;
+
+            padding:
+                10px
+                14px;
+
+            background:
+                #fff1ec;
+
+            color:
+                #e85d3f;
+
+            border-radius:
+                8px;
+
+            font-family:
+                Consolas,
+                monospace;
+
+            font-size:
+                16px;
+
+            font-weight:
+                bold;
+
+        }
+
+
+        /* =========================
+           説明
+        ========================= */
+
+        .description {
+
+            color:
+                #666666;
+
+            font-size:
+                16px;
+
+            line-height:
+                1.7;
+
+        }
+
+
+        /* =========================
+           補足
+        ========================= */
+
+        .info-box {
+
+            margin-top:
+                35px;
+
+            padding:
+                20px;
+
+            background:
+                #fff5ee;
+
+            border-left:
+                4px solid #e85d3f;
+
+            border-radius:
+                8px;
+
+            color:
+                #666666;
+
+            line-height:
+                1.8;
+
+            font-size:
+                14px;
+
+        }
+
+
+        /* =========================
+           フッター
+        ========================= */
+
+        footer {
+
+            padding:
+                30px
+                20px;
+
+            text-align:
+                center;
+
+            background:
+                #f8f8f8;
+
+            border-top:
+                1px solid #eeeeee;
+
+            color:
+                #999999;
+
+            font-size:
+                14px;
+
+        }
+
+
+        /* =========================
+           スマホ
+        ========================= */
+
+        @media (max-width: 600px) {
+
+
+            header {
+
+                padding:
+                    60px
+                    15px
+                    45px;
+
+            }
+
+
+            header h1 {
+
+                font-size:
+                    30px;
+
+            }
+
+
+            header p {
+
+                font-size:
+                    14px;
+
+            }
+
+
+            .content {
+
+                padding:
+                    45px
+                    15px
+                    60px;
+
+            }
+
+
+            h2 {
+
+                font-size:
+                    27px;
+
+            }
+
+
+            .command-card {
+
+                flex-direction:
+                    column;
+
+                align-items:
+                    flex-start;
+
+                gap:
+                    12px;
+
+                padding:
+                    20px;
+
+            }
+
+
+            .command {
+
+                font-size:
+                    15px;
+
+            }
+
+
+            .description {
+
+                font-size:
+                    15px;
+
+            }
+
+
+            .light {
+
+                width:
+                    320px;
+
+                height:
+                    320px;
+
+                filter:
+                    blur(75px);
+
+                opacity:
+                    0.13;
+
+            }
+
+        }
+
+
+        /* =========================
+           動きを減らす設定
+        ========================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .light {
+                animation: none;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         背景
+    ========================= -->
+
+    <div class="background">
+
+        <div class="light one"></div>
+
+        <div class="light two"></div>
+
+        <div class="light three"></div>
+
+    </div>
+
+
+
+    <!-- =========================
+         ヘッダー
+    ========================= -->
+
+    <header>
+
+        <h1>
+            📖 コマンド一覧
+        </h1>
+
+        <p>
+            ひろ鯖で使用できるコマンドをご紹介します
+        </p>
+
+    </header>
+
+
+
+    <!-- =========================
+         メイン
+    ========================= -->
+
+    <main class="content">
+
+
+        <!-- 戻る -->
+
+        <a
+            href="index.html"
+            class="back-button"
+        >
+            ← ホームへ戻る
+        </a>
+
+
+
+        <!-- =========================
+             基本コマンド
+        ========================= -->
+
+        <h2>
+            基本コマンド
+        </h2>
+
+
+
+        <!-- spawn -->
+
+        <div class="command-card">
+
+            <div class="command">
+                /spawn
+            </div>
+
+            <div class="description">
+
+                初期スポーン地点へ移動します。
+
+            </div>
+
+        </div>
+
+
+
+        <!-- tpa -->
+
+        <div class="command-card">
+
+            <div class="command">
+                /tpa &lt;プレイヤー&gt;
+            </div>
+
+            <div class="description">
+
+                指定したプレイヤーに
+                テレポート申請を送ります。
+
+            </div>
+
+        </div>
+
+
+
+        <!-- tpahere -->
+
+        <div class="command-card">
+
+            <div class="command">
+                /tpahere &lt;プレイヤー&gt;
+            </div>
+
+            <div class="description">
+
+                指定したプレイヤーを
+                自分のいる場所へ呼ぶための
+                テレポート申請を送ります。
+
+            </div>
+
+        </div>
+
+
+
+        <!-- tpaccept -->
+
+        <div class="command-card">
+
+            <div class="command">
+                /tpaccept
+            </div>
+
+            <div class="description">
+
+                届いたテレポート申請を
+                許可します。
+
+            </div>
+
+        </div>
+
+
+
+        <!-- tpdeny -->
+
+        <div class="command-card">
+
+            <div class="command">
+                /tpdeny
+            </div>
+
+            <div class="description">
+
+                届いたテレポート申請を
+                拒否します。
+
+            </div>
+
+        </div>
+
+
+
+        <!-- tpacancel -->
+
+        <div class="command-card">
+
+            <div class="command">
+                /tpacancel
+            </div>
+
+            <div class="description">
+
+                自分が送った
+                テレポート申請を
+                キャンセルします。
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =========================
+             補足
+        ========================= -->
+
+        <div class="info-box">
+
+            💡 <strong>コマンドについて</strong><br>
+
+            コマンドを使用する際は、
+            「&lt;プレイヤー&gt;」の部分を
+            実際のプレイヤー名に置き換えてください。
+
+            <br><br>
+
+            例：
+            <strong>/tpa Hiro</strong>
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         フッター
+    ========================= -->
+
+    <footer>
+
+        © 2026 ひろ鯖
+
+    </footer>
+
+
+</body>
+
+</html>
