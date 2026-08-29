@@ -43,106 +43,90 @@
         }
 
 
+        /* ほんのりした光 */
+
         .light {
             position: absolute;
 
-            width: 550px;
-            height: 550px;
+            width: 500px;
+            height: 500px;
 
             border-radius: 50%;
 
-            filter: blur(90px);
+            filter: blur(110px);
 
-            opacity: 0.45;
+            opacity: 0.18;
         }
 
 
         .light.one {
-            background: #ff9b7d;
+            background: #ffb49f;
 
             top: -180px;
-            left: -120px;
+            left: -150px;
 
-            animation:
-                moveLight1 9s ease-in-out infinite alternate,
-                glowLight 4s ease-in-out infinite;
+            animation: moveLight1 16s ease-in-out infinite alternate;
         }
 
 
         .light.two {
-            background: #ffb39c;
+            background: #ffcabb;
 
-            top: 30%;
-            right: -200px;
+            top: 35%;
+            right: -220px;
 
-            animation:
-                moveLight2 11s ease-in-out infinite alternate,
-                glowLight 5s ease-in-out infinite;
+            animation: moveLight2 19s ease-in-out infinite alternate;
         }
 
 
         .light.three {
-            background: #ffd0c0;
+            background: #ffe0d5;
 
-            bottom: -200px;
-            left: 25%;
+            bottom: -250px;
+            left: 30%;
 
-            animation:
-                moveLight3 13s ease-in-out infinite alternate,
-                glowLight 6s ease-in-out infinite;
+            animation: moveLight3 22s ease-in-out infinite alternate;
         }
 
 
         @keyframes moveLight1 {
+
             0% {
-                transform: translate(0, 0) scale(1);
+                transform: translate(0, 0);
             }
 
             100% {
-                transform: translate(250px, 150px) scale(1.2);
+                transform: translate(130px, 80px);
             }
         }
 
 
         @keyframes moveLight2 {
+
             0% {
-                transform: translate(0, 0) scale(1);
+                transform: translate(0, 0);
             }
 
             100% {
-                transform: translate(-220px, -130px) scale(1.25);
+                transform: translate(-120px, -70px);
             }
         }
 
 
         @keyframes moveLight3 {
+
             0% {
-                transform: translate(0, 0) scale(1);
+                transform: translate(0, 0);
             }
 
             100% {
-                transform: translate(180px, -150px) scale(1.15);
-            }
-        }
-
-
-        @keyframes glowLight {
-            0% {
-                opacity: 0.30;
-            }
-
-            50% {
-                opacity: 0.65;
-            }
-
-            100% {
-                opacity: 0.30;
+                transform: translate(100px, -80px);
             }
         }
 
 
         /* =========================
-           キラキラ
+           控えめなキラキラ
         ========================= */
 
         .sparkles {
@@ -158,21 +142,20 @@
         .sparkle {
             position: absolute;
 
-            width: 6px;
-            height: 35px;
+            width: 3px;
+            height: 14px;
 
             border-radius: 50%;
 
             background: #ffffff;
 
             box-shadow:
-                0 0 10px #ff8b6b,
-                0 0 25px #ff8b6b,
-                0 0 50px #ffd0c0;
+                0 0 5px #ffb9a5,
+                0 0 10px #ffd8ce;
 
             opacity: 0;
 
-            animation: sparkle 3s ease-in-out infinite;
+            animation: sparkle 6s ease-in-out infinite;
         }
 
 
@@ -181,96 +164,81 @@
 
             position: absolute;
 
-            width: 35px;
-            height: 6px;
+            width: 14px;
+            height: 3px;
 
-            left: -14px;
-            top: 14px;
+            left: -5px;
+            top: 5px;
 
             border-radius: 50%;
 
             background: #ffffff;
 
             box-shadow:
-                0 0 10px #ff8b6b,
-                0 0 25px #ff8b6b,
-                0 0 50px #ffd0c0;
+                0 0 5px #ffb9a5,
+                0 0 10px #ffd8ce;
         }
 
 
         .sparkle:nth-child(1) {
-            top: 12%;
-            left: 10%;
+            top: 18%;
+            left: 13%;
             animation-delay: 0s;
         }
 
-        .sparkle:nth-child(2) {
-            top: 25%;
-            left: 80%;
-            animation-delay: 1s;
-        }
 
-        .sparkle:nth-child(3) {
-            top: 45%;
-            left: 18%;
+        .sparkle:nth-child(2) {
+            top: 34%;
+            left: 82%;
             animation-delay: 2s;
         }
 
-        .sparkle:nth-child(4) {
-            top: 65%;
-            left: 75%;
-            animation-delay: 0.5s;
+
+        .sparkle:nth-child(3) {
+            top: 62%;
+            left: 20%;
+            animation-delay: 4s;
         }
+
+
+        .sparkle:nth-child(4) {
+            top: 78%;
+            left: 73%;
+            animation-delay: 1s;
+        }
+
 
         .sparkle:nth-child(5) {
-            top: 82%;
-            left: 42%;
-            animation-delay: 1.8s;
-        }
-
-        .sparkle:nth-child(6) {
-            top: 50%;
-            left: 55%;
-            animation-delay: 2.5s;
-        }
-
-        .sparkle:nth-child(7) {
-            top: 18%;
-            left: 60%;
-            animation-delay: 1.3s;
-        }
-
-        .sparkle:nth-child(8) {
-            top: 75%;
-            left: 12%;
-            animation-delay: 2.8s;
+            top: 48%;
+            left: 57%;
+            animation-delay: 3s;
         }
 
 
         @keyframes sparkle {
+
             0% {
                 opacity: 0;
-                transform: scale(0.2) rotate(0deg);
+                transform: scale(0.4) rotate(45deg);
             }
 
-            35% {
-                opacity: 1;
-                transform: scale(1.5) rotate(45deg);
+            45% {
+                opacity: 0;
             }
 
-            50% {
-                opacity: 0.8;
-                transform: scale(2) rotate(45deg);
+            52% {
+                opacity: 0.55;
+                transform: scale(1) rotate(45deg);
             }
 
-            70% {
-                opacity: 0.2;
-                transform: scale(0.8) rotate(45deg);
+            60% {
+                opacity: 0.1;
+                transform: scale(0.7) rotate(45deg);
             }
 
             100% {
                 opacity: 0;
-                transform: scale(0.2) rotate(90deg);
+                transform: scale(0.4) rotate(45deg);
             }
         }
 
@@ -294,10 +262,9 @@
             padding: 11px 17px;
 
             border: none;
-
             border-radius: 30px;
 
-            background: rgba(255, 255, 255, 0.92);
+            background: rgba(255, 255, 255, 0.94);
 
             color: #e85d3f;
 
@@ -307,7 +274,7 @@
             cursor: pointer;
 
             box-shadow:
-                0 5px 18px rgba(0, 0, 0, 0.12);
+                0 4px 15px rgba(0, 0, 0, 0.10);
 
             backdrop-filter: blur(8px);
 
@@ -319,7 +286,7 @@
             transform: translateY(-2px);
 
             box-shadow:
-                0 8px 22px rgba(0, 0, 0, 0.16);
+                0 7px 18px rgba(0, 0, 0, 0.13);
         }
 
 
@@ -342,7 +309,7 @@
             width: 100%;
             height: 100%;
 
-            background: rgba(0, 0, 0, 0.25);
+            background: rgba(0, 0, 0, 0.18);
 
             z-index: 998;
 
@@ -362,7 +329,7 @@
 
 
         /* =========================
-           横から出てくるメニュー
+           サイドメニュー
         ========================= */
 
         .side-menu {
@@ -379,12 +346,12 @@
             z-index: 999;
 
             background:
-                rgba(255, 255, 255, 0.96);
+                rgba(255, 255, 255, 0.97);
 
             backdrop-filter: blur(15px);
 
             box-shadow:
-                -8px 0 30px rgba(0, 0, 0, 0.12);
+                -8px 0 25px rgba(0, 0, 0, 0.10);
 
             padding: 90px 25px 30px;
 
@@ -400,10 +367,6 @@
             transform: translateX(0);
         }
 
-
-        /* =========================
-           メニュータイトル
-        ========================= */
 
         .side-menu h2 {
             margin: 0 0 30px;
@@ -432,16 +395,12 @@
         }
 
 
-        /* =========================
-           メニューリンク
-        ========================= */
-
         .menu-link {
             display: block;
 
-            padding: 16px 15px;
+            padding: 15px;
 
-            margin-bottom: 8px;
+            margin-bottom: 7px;
 
             color: #444444;
 
@@ -457,7 +416,7 @@
 
 
         .menu-link:hover {
-            background: #fff0eb;
+            background: #fff1ec;
 
             color: #e85d3f;
 
@@ -485,8 +444,8 @@
             background:
                 linear-gradient(
                     180deg,
-                    rgba(255, 245, 241, 0.55),
-                    rgba(255, 255, 255, 0.25)
+                    rgba(255, 247, 244, 0.45),
+                    rgba(255, 255, 255, 0.2)
                 );
 
             border-bottom: 1px solid #f3ddd6;
@@ -504,23 +463,24 @@
 
             filter:
                 drop-shadow(
-                    0 8px 15px rgba(0, 0, 0, 0.12)
+                    0 7px 14px rgba(0, 0, 0, 0.10)
                 );
 
             margin-bottom: 20px;
 
             animation:
-                logoFloat 4s ease-in-out infinite;
+                logoFloat 5s ease-in-out infinite;
         }
 
 
         @keyframes logoFloat {
+
             0% {
                 transform: translateY(0);
             }
 
             50% {
-                transform: translateY(-6px);
+                transform: translateY(-5px);
             }
 
             100% {
@@ -613,11 +573,11 @@
 
         .join-box {
             background:
-                rgba(255, 255, 255, 0.88);
+                rgba(255, 255, 255, 0.92);
 
             backdrop-filter: blur(8px);
 
-            border: 2px solid rgba(238, 238, 238, 0.9);
+            border: 1px solid #eeeeee;
 
             border-radius: 18px;
 
@@ -626,19 +586,19 @@
             margin-top: 25px;
 
             box-shadow:
-                0 8px 30px rgba(0, 0, 0, 0.07);
+                0 7px 25px rgba(0, 0, 0, 0.06);
 
             transition: 0.25s;
         }
 
 
         .join-box:hover {
-            transform: translateY(-4px);
+            transform: translateY(-3px);
 
             border-color: #f2c2b5;
 
             box-shadow:
-                0 12px 30px rgba(232, 93, 63, 0.12);
+                0 10px 25px rgba(232, 93, 63, 0.09);
         }
 
 
@@ -672,7 +632,7 @@
 
             min-height: 50px;
 
-            background: rgba(247, 247, 247, 0.95);
+            background: #f8f8f8;
 
             border: 1px solid #dddddd;
 
@@ -681,6 +641,8 @@
             overflow: hidden;
 
             position: relative;
+
+            margin-bottom: 20px;
         }
 
 
@@ -793,6 +755,15 @@
 
 
         /* =========================
+           お知らせ
+        ========================= */
+
+        .news-section {
+            margin-top: 90px;
+        }
+
+
+        /* =========================
            フッター
         ========================= */
 
@@ -801,7 +772,7 @@
 
             text-align: center;
 
-            background: rgba(248, 248, 248, 0.85);
+            background: rgba(248, 248, 248, 0.88);
 
             border-top: 1px solid #eeeeee;
 
@@ -860,10 +831,12 @@
 
 
             .light {
-                width: 300px;
-                height: 300px;
+                width: 320px;
+                height: 320px;
 
-                filter: blur(60px);
+                filter: blur(75px);
+
+                opacity: 0.14;
             }
 
 
@@ -877,6 +850,20 @@
 
             .side-menu {
                 width: 290px;
+            }
+        }
+
+
+        /* =========================
+           動きを減らす設定
+        ========================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .light,
+            .sparkle,
+            .logo {
+                animation: none;
             }
         }
 
@@ -899,9 +886,6 @@
 
     <div class="sparkles">
 
-        <div class="sparkle"></div>
-        <div class="sparkle"></div>
-        <div class="sparkle"></div>
         <div class="sparkle"></div>
         <div class="sparkle"></div>
         <div class="sparkle"></div>
@@ -951,6 +935,7 @@
 
     <h2>メニュー</h2>
 
+
     <a
         href="#home"
         class="menu-link"
@@ -958,6 +943,7 @@
     >
         🏠 ホーム
     </a>
+
 
     <a
         href="#about"
@@ -967,6 +953,7 @@
         🌱 ひろ鯖とは
     </a>
 
+
     <a
         href="#join"
         class="menu-link"
@@ -974,6 +961,7 @@
     >
         🎮 参加方法
     </a>
+
 
     <a
         href="#news"
@@ -1026,16 +1014,19 @@
                 みんなで楽しめるサーバーを目指して運営しています。
             </p>
 
+
             <p>
                 統合版・Java版を問わず参加でき、
                 オリジナルの食べ物や武器、家具、ブロックなど、
                 ひろ鯖ならではのコンテンツを楽しむことができます。
             </p>
 
+
             <p>
                 経済システムやイベントなども用意して、
                 「また遊びに来たい！」と思ってもらえるサーバーを目指しています。
             </p>
+
 
             <p>
                 みなさんの参加や応援が、ひろ鯖の力になります！
@@ -1065,15 +1056,18 @@
 
             <h3>Java版</h3>
 
+
             <p class="address-title">
                 サーバーアドレス
             </p>
+
 
             <div class="address">
 
                 <span id="java-address">
                     ここにJava版のアドレス
                 </span>
+
 
                 <button
                     class="copy-button"
@@ -1084,6 +1078,7 @@
                 >
                     コピー
                 </button>
+
 
                 <span
                     id="java-message"
@@ -1108,11 +1103,13 @@
                 サーバーアドレス
             </p>
 
+
             <div class="address">
 
                 <span id="bedrock-address">
                     ここに統合版のアドレス
                 </span>
+
 
                 <button
                     class="copy-button"
@@ -1123,6 +1120,7 @@
                 >
                     コピー
                 </button>
+
 
                 <span
                     id="bedrock-message"
@@ -1138,11 +1136,13 @@
                 ポート
             </p>
 
+
             <div class="address">
 
                 <span id="bedrock-port">
                     19132
                 </span>
+
 
                 <button
                     class="copy-button"
@@ -1153,6 +1153,7 @@
                 >
                     コピー
                 </button>
+
 
                 <span
                     id="port-message"
@@ -1173,11 +1174,13 @@
                 フレンドの名前
             </p>
 
+
             <div class="address">
 
                 <span id="friend-name">
                     ここにフレンドの名前
                 </span>
+
 
                 <button
                     class="copy-button"
@@ -1188,6 +1191,7 @@
                 >
                     コピー
                 </button>
+
 
                 <span
                     id="friend-message"
@@ -1208,11 +1212,12 @@
     ========================= -->
 
     <section
+        class="news-section"
         id="news"
-        style="margin-top: 90px;"
     >
 
         <h2>お知らせ</h2>
+
 
         <div class="join-box">
 
