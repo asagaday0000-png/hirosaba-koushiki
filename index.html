@@ -15,94 +15,94 @@
         }
 
         header {
-            padding: 80px 20px;
+            padding: 70px 20px;
             background: #2d7d46;
         }
 
         .logo {
             width: 350px;
+            max-width: 80%;
             height: auto;
             display: block;
             margin: 0 auto 20px;
         }
 
-        h1 {
-            font-size: 56px;
-            margin: 0 0 15px;
-        }
-
-        p {
+        header p {
             font-size: 20px;
         }
 
         .content {
-            padding: 50px 20px;
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
+            padding: 50px 20px;
         }
 
-        .button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 15px 30px;
-            background: #4caf50;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
+        h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
         }
 
-        /* 参加方法 */
+        .description {
+            line-height: 2;
+            color: #dddddd;
+        }
+
         .join-section {
-            margin-top: 60px;
+            margin-top: 70px;
         }
 
         .join-box {
-            background: #f5f5f5;
-            color: #222;
+            background: #292929;
+            border: 1px solid #3a3a3a;
+            border-radius: 10px;
             padding: 25px;
-            margin: 20px auto;
-            border-radius: 12px;
+            margin: 20px 0;
             text-align: left;
-            max-width: 700px;
         }
 
         .join-box h3 {
             margin-top: 0;
-            font-size: 26px;
+            font-size: 24px;
         }
 
-        .server-address {
+        .address {
             display: flex;
             align-items: center;
             gap: 10px;
-            margin: 10px 0;
-            padding: 12px;
-            background: #e5e5e5;
-            border-radius: 8px;
+            background: #202020;
+            border: 1px solid #3a3a3a;
+            border-radius: 6px;
+            padding: 10px;
+        }
+
+        .address span {
+            flex: 1;
             word-break: break-all;
         }
 
-        .server-address span {
-            flex: 1;
-        }
-
         .copy-button {
-            border: none;
-            padding: 8px 14px;
             background: #4caf50;
             color: white;
-            border-radius: 6px;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 12px;
             cursor: pointer;
-            white-space: nowrap;
-            font-size: 14px;
         }
 
         .copy-button:hover {
             background: #3d9140;
         }
 
-        .friend-name {
-            margin-top: 15px;
+        .copy-message {
+            color: #7ed957;
+            font-size: 14px;
+            display: none;
+            margin-left: 5px;
+        }
+
+        .note {
+            color: #cccccc;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -116,33 +116,33 @@
 
 <div class="content">
 
-    <!-- ひろ鯖とは -->
     <h2>ひろ鯖とは</h2>
 
-    <p>
-        ひろ鯖は、2026年から始まったMinecraftサーバーです！<br>
-        「新感覚の、新しいマイクラを楽しんでもらうこと」をモットーに、
-        みんなで楽しめるサーバーを目指して運営しています。
-    </p>
+    <div class="description">
+        <p>
+            ひろ鯖は、2026年から始まったMinecraftサーバーです！<br>
+            「新感覚の、新しいマイクラを楽しんでもらうこと」をモットーに、
+            みんなで楽しめるサーバーを目指して運営しています。
+        </p>
 
-    <p>
-        ひろ鯖の魅力は、統合版・Java版を問わず参加できること！
-        さらに、ひろ鯖でしか味わえないオリジナルの食べ物や武器、家具、ブロックなど、
-        さまざまなコンテンツを楽しむことができます。
-    </p>
+        <p>
+            統合版・Java版を問わず参加でき、
+            オリジナルの食べ物や武器、家具、ブロックなど、
+            ひろ鯖ならではのコンテンツを楽しむことができます。
+        </p>
 
-    <p>
-        経済システムや楽しいイベントなども用意して、
-        「また遊びに来たい！」と思ってもらえるサーバーを目指しています。
-    </p>
+        <p>
+            経済システムやイベントなども用意して、
+            「また遊びに来たい！」と思ってもらえるサーバーを目指しています。
+        </p>
 
-    <p>
-        みなさんの参加や応援が、ひろ鯖の力になります！<br>
-        ぜひ友達を誘って、ひろ鯖で一緒に遊んでみてください！
-    </p>
+        <p>
+            みなさんの参加や応援が、ひろ鯖の力になります！<br>
+            ぜひ友達を誘って、一緒に遊んでみてください！
+        </p>
+    </div>
 
 
-    <!-- 参加方法 -->
     <div class="join-section">
 
         <h2>参加方法</h2>
@@ -153,12 +153,17 @@
 
             <p>サーバーアドレス</p>
 
-            <div class="server-address">
+            <div class="address">
                 <span id="java-address">ここにJava版のアドレス</span>
 
-                <button class="copy-button" onclick="copyText('java-address')">
+                <button class="copy-button"
+                        onclick="copyText('java-address', 'java-message')">
                     コピー
                 </button>
+
+                <span id="java-message" class="copy-message">
+                    コピーしました！
+                </span>
             </div>
         </div>
 
@@ -169,40 +174,52 @@
 
             <p>サーバーアドレス</p>
 
-            <div class="server-address">
+            <div class="address">
                 <span id="bedrock-address">ここに統合版のアドレス</span>
 
-                <button class="copy-button" onclick="copyText('bedrock-address')">
+                <button class="copy-button"
+                        onclick="copyText('bedrock-address', 'bedrock-message')">
                     コピー
                 </button>
-            </div>
 
+                <span id="bedrock-message" class="copy-message">
+                    コピーしました！
+                </span>
+            </div>
 
             <p>ポート</p>
 
-            <div class="server-address">
+            <div class="address">
                 <span id="bedrock-port">19132</span>
 
-                <button class="copy-button" onclick="copyText('bedrock-port')">
+                <button class="copy-button"
+                        onclick="copyText('bedrock-port', 'port-message')">
                     コピー
                 </button>
+
+                <span id="port-message" class="copy-message">
+                    コピーしました！
+                </span>
             </div>
 
-
-            <p>
-                統合版はフレンド申請でも参加可能！
+            <p class="note">
+                統合版はフレンド申請でも参加できます！
             </p>
 
             <p>フレンドの名前</p>
 
-            <div class="server-address friend-name">
+            <div class="address">
                 <span id="friend-name">ここにフレンドの名前</span>
 
-                <button class="copy-button" onclick="copyText('friend-name')">
+                <button class="copy-button"
+                        onclick="copyText('friend-name', 'friend-message')">
                     コピー
                 </button>
-            </div>
 
+                <span id="friend-message" class="copy-message">
+                    コピーしました！
+                </span>
+            </div>
         </div>
 
     </div>
@@ -210,14 +227,18 @@
 </div>
 
 
-<!-- コピー機能 -->
 <script>
-    function copyText(id) {
-        const text = document.getElementById(id).textContent;
+    function copyText(textId, messageId) {
+        const text = document.getElementById(textId).textContent;
+        const message = document.getElementById(messageId);
 
-        navigator.clipboard.writeText(text).then(() => {
-            alert("コピーしました！");
-        });
+        navigator.clipboard.writeText(text);
+
+        message.style.display = "inline";
+
+        setTimeout(() => {
+            message.style.display = "none";
+        }, 2000);
     }
 </script>
 
