@@ -24,6 +24,7 @@
 
         header {
             min-height: 520px;
+
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -32,9 +33,14 @@
             padding: 60px 20px;
 
             background:
-                radial-gradient(circle at center, #285c3b 0%, #183022 35%, #111111 75%);
+                radial-gradient(
+                    circle at center,
+                    #8b2020 0%,
+                    #3d1515 35%,
+                    #111111 75%
+                );
 
-            border-bottom: 1px solid #26382d;
+            border-bottom: 1px solid #3a2020;
         }
 
         .logo {
@@ -42,15 +48,20 @@
             max-width: 80%;
             height: auto;
 
-            filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.5));
+            filter: drop-shadow(
+                0 10px 25px rgba(0, 0, 0, 0.5)
+            );
 
             margin-bottom: 25px;
         }
 
         header p {
             margin: 0;
+
             color: #dddddd;
+
             font-size: 20px;
+
             letter-spacing: 2px;
         }
 
@@ -61,18 +72,23 @@
 
         .content {
             max-width: 900px;
+
             margin: 0 auto;
+
             padding: 80px 20px;
         }
 
         h2 {
             margin: 0 0 35px;
+
             font-size: 34px;
+
             text-align: center;
         }
 
         h2::after {
             content: "";
+
             display: block;
 
             width: 50px;
@@ -80,7 +96,8 @@
 
             margin: 15px auto 0;
 
-            background: #4caf50;
+            background: #d63b3b;
+
             border-radius: 10px;
         }
 
@@ -91,7 +108,9 @@
 
         .description {
             color: #cccccc;
+
             line-height: 2;
+
             font-size: 17px;
         }
 
@@ -112,20 +131,23 @@
             background: #181818;
 
             border: 1px solid #2d2d2d;
+
             border-radius: 14px;
 
             padding: 30px;
 
             margin-top: 25px;
 
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.25);
 
             transition: 0.25s;
         }
 
         .join-box:hover {
             transform: translateY(-3px);
-            border-color: #3d694b;
+
+            border-color: #693737;
         }
 
         .join-box h3 {
@@ -149,11 +171,13 @@
 
         .address {
             display: flex;
+
             align-items: center;
 
             min-height: 48px;
 
             background: #101010;
+
             border: 1px solid #303030;
 
             border-radius: 8px;
@@ -176,10 +200,6 @@
            コピー
         ========================= */
 
-        .copy-area {
-            position: relative;
-        }
-
         .copy-button {
             flex-shrink: 0;
 
@@ -187,10 +207,12 @@
 
             padding: 9px 15px;
 
-            background: #2d7d46;
+            background: #a52d2d;
+
             color: white;
 
             border: none;
+
             border-radius: 6px;
 
             cursor: pointer;
@@ -201,7 +223,7 @@
         }
 
         .copy-button:hover {
-            background: #3f9a58;
+            background: #c43b3b;
         }
 
         .copy-button:active {
@@ -223,7 +245,8 @@
 
             padding: 8px 12px;
 
-            background: #2d7d46;
+            background: #a52d2d;
+
             color: white;
 
             border-radius: 6px;
@@ -231,6 +254,7 @@
             font-size: 13px;
 
             opacity: 0;
+
             pointer-events: none;
 
             transition: opacity 0.2s;
@@ -250,9 +274,9 @@
 
             padding: 15px;
 
-            background: #151d18;
+            background: #211515;
 
-            border-left: 3px solid #4caf50;
+            border-left: 3px solid #d63b3b;
 
             color: #cccccc !important;
 
