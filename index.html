@@ -37,6 +37,8 @@
 
         .content {
             padding: 50px 20px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .button {
@@ -47,6 +49,60 @@
             color: white;
             text-decoration: none;
             border-radius: 8px;
+        }
+
+        /* 参加方法 */
+        .join-section {
+            margin-top: 60px;
+        }
+
+        .join-box {
+            background: #f5f5f5;
+            color: #222;
+            padding: 25px;
+            margin: 20px auto;
+            border-radius: 12px;
+            text-align: left;
+            max-width: 700px;
+        }
+
+        .join-box h3 {
+            margin-top: 0;
+            font-size: 26px;
+        }
+
+        .server-address {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+            padding: 12px;
+            background: #e5e5e5;
+            border-radius: 8px;
+            word-break: break-all;
+        }
+
+        .server-address span {
+            flex: 1;
+        }
+
+        .copy-button {
+            border: none;
+            padding: 8px 14px;
+            background: #4caf50;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            white-space: nowrap;
+            font-size: 14px;
+        }
+
+        .copy-button:hover {
+            background: #3d9140;
+        }
+
+        .friend-name {
+            margin-top: 15px;
         }
     </style>
 </head>
@@ -59,6 +115,8 @@
 </header>
 
 <div class="content">
+
+    <!-- ひろ鯖とは -->
     <h2>ひろ鯖とは</h2>
 
     <p>
@@ -83,10 +141,85 @@
         ぜひ友達を誘って、ひろ鯖で一緒に遊んでみてください！
     </p>
 
-    <a class="button" href="#">
-        サーバー情報
-    </a>
+
+    <!-- 参加方法 -->
+    <div class="join-section">
+
+        <h2>参加方法</h2>
+
+        <!-- Java版 -->
+        <div class="join-box">
+            <h3>Java版</h3>
+
+            <p>サーバーアドレス</p>
+
+            <div class="server-address">
+                <span id="java-address">ここにJava版のアドレス</span>
+
+                <button class="copy-button" onclick="copyText('java-address')">
+                    コピー
+                </button>
+            </div>
+        </div>
+
+
+        <!-- 統合版 -->
+        <div class="join-box">
+            <h3>統合版</h3>
+
+            <p>サーバーアドレス</p>
+
+            <div class="server-address">
+                <span id="bedrock-address">ここに統合版のアドレス</span>
+
+                <button class="copy-button" onclick="copyText('bedrock-address')">
+                    コピー
+                </button>
+            </div>
+
+
+            <p>ポート</p>
+
+            <div class="server-address">
+                <span id="bedrock-port">19132</span>
+
+                <button class="copy-button" onclick="copyText('bedrock-port')">
+                    コピー
+                </button>
+            </div>
+
+
+            <p>
+                統合版はフレンド申請でも参加可能！
+            </p>
+
+            <p>フレンドの名前</p>
+
+            <div class="server-address friend-name">
+                <span id="friend-name">ここにフレンドの名前</span>
+
+                <button class="copy-button" onclick="copyText('friend-name')">
+                    コピー
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
+
+
+<!-- コピー機能 -->
+<script>
+    function copyText(id) {
+        const text = document.getElementById(id).textContent;
+
+        navigator.clipboard.writeText(text).then(() => {
+            alert("コピーしました！");
+        });
+    }
+</script>
 
 </body>
 </html>
