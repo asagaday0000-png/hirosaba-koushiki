@@ -20,18 +20,16 @@
             font-family: Arial, "Noto Sans JP", sans-serif;
             background: #ffffff;
             color: #333333;
-
             overflow-x: hidden;
         }
 
 
         /* =========================
-           背景のキラキラ
+           背景
         ========================= */
 
         .background {
             position: fixed;
-
             top: 0;
             left: 0;
 
@@ -39,94 +37,112 @@
             height: 100%;
 
             z-index: -1;
-
             overflow: hidden;
 
             background: #ffffff;
         }
 
 
-        /* 大きな光 */
-
         .light {
             position: absolute;
 
-            width: 450px;
-            height: 450px;
+            width: 550px;
+            height: 550px;
 
             border-radius: 50%;
 
-            filter: blur(80px);
+            filter: blur(90px);
 
-            opacity: 0.25;
+            opacity: 0.45;
         }
+
 
         .light.one {
-            background: #ffb09d;
+            background: #ff9b7d;
 
-            top: -150px;
-            left: -100px;
+            top: -180px;
+            left: -120px;
 
-            animation: moveLight1 12s ease-in-out infinite alternate;
+            animation:
+                moveLight1 9s ease-in-out infinite alternate,
+                glowLight 4s ease-in-out infinite;
         }
+
 
         .light.two {
-            background: #ffd0c3;
+            background: #ffb39c;
 
-            top: 35%;
-            right: -180px;
+            top: 30%;
+            right: -200px;
 
-            animation: moveLight2 15s ease-in-out infinite alternate;
+            animation:
+                moveLight2 11s ease-in-out infinite alternate,
+                glowLight 5s ease-in-out infinite;
         }
 
+
         .light.three {
-            background: #ffe4dc;
+            background: #ffd0c0;
 
-            bottom: -180px;
-            left: 30%;
+            bottom: -200px;
+            left: 25%;
 
-            animation: moveLight3 18s ease-in-out infinite alternate;
+            animation:
+                moveLight3 13s ease-in-out infinite alternate,
+                glowLight 6s ease-in-out infinite;
         }
 
 
         @keyframes moveLight1 {
-
             0% {
-                transform: translate(0, 0);
+                transform: translate(0, 0) scale(1);
             }
 
             100% {
-                transform: translate(180px, 100px);
+                transform: translate(250px, 150px) scale(1.2);
             }
         }
 
 
         @keyframes moveLight2 {
-
             0% {
-                transform: translate(0, 0);
+                transform: translate(0, 0) scale(1);
             }
 
             100% {
-                transform: translate(-160px, -100px);
+                transform: translate(-220px, -130px) scale(1.25);
             }
         }
 
 
         @keyframes moveLight3 {
-
             0% {
-                transform: translate(0, 0);
+                transform: translate(0, 0) scale(1);
             }
 
             100% {
-                transform: translate(120px, -100px);
+                transform: translate(180px, -150px) scale(1.15);
+            }
+        }
+
+
+        @keyframes glowLight {
+            0% {
+                opacity: 0.30;
+            }
+
+            50% {
+                opacity: 0.65;
+            }
+
+            100% {
+                opacity: 0.30;
             }
         }
 
 
         /* =========================
-           キラキラの粒
+           キラキラ
         ========================= */
 
         .sparkles {
@@ -138,100 +154,314 @@
             pointer-events: none;
         }
 
+
         .sparkle {
             position: absolute;
 
-            width: 5px;
-            height: 5px;
-
-            background: #ff9b82;
+            width: 6px;
+            height: 35px;
 
             border-radius: 50%;
 
+            background: #ffffff;
+
             box-shadow:
-                0 0 10px #ff9b82,
-                0 0 20px #ffc1b0;
+                0 0 10px #ff8b6b,
+                0 0 25px #ff8b6b,
+                0 0 50px #ffd0c0;
 
             opacity: 0;
 
-            animation: sparkle 4s ease-in-out infinite;
+            animation: sparkle 3s ease-in-out infinite;
+        }
+
+
+        .sparkle::after {
+            content: "";
+
+            position: absolute;
+
+            width: 35px;
+            height: 6px;
+
+            left: -14px;
+            top: 14px;
+
+            border-radius: 50%;
+
+            background: #ffffff;
+
+            box-shadow:
+                0 0 10px #ff8b6b,
+                0 0 25px #ff8b6b,
+                0 0 50px #ffd0c0;
         }
 
 
         .sparkle:nth-child(1) {
-            top: 15%;
-            left: 12%;
+            top: 12%;
+            left: 10%;
             animation-delay: 0s;
         }
 
         .sparkle:nth-child(2) {
-            top: 30%;
-            left: 82%;
-            animation-delay: 1.2s;
+            top: 25%;
+            left: 80%;
+            animation-delay: 1s;
         }
 
         .sparkle:nth-child(3) {
-            top: 55%;
-            left: 20%;
-            animation-delay: 2.4s;
+            top: 45%;
+            left: 18%;
+            animation-delay: 2s;
         }
 
         .sparkle:nth-child(4) {
-            top: 70%;
+            top: 65%;
             left: 75%;
-            animation-delay: 0.8s;
+            animation-delay: 0.5s;
         }
 
         .sparkle:nth-child(5) {
-            top: 85%;
-            left: 40%;
-            animation-delay: 3s;
+            top: 82%;
+            left: 42%;
+            animation-delay: 1.8s;
         }
 
         .sparkle:nth-child(6) {
-            top: 45%;
+            top: 50%;
             left: 55%;
-            animation-delay: 1.7s;
+            animation-delay: 2.5s;
         }
 
         .sparkle:nth-child(7) {
-            top: 20%;
+            top: 18%;
             left: 60%;
-            animation-delay: 2.8s;
+            animation-delay: 1.3s;
         }
 
         .sparkle:nth-child(8) {
             top: 75%;
-            left: 10%;
-            animation-delay: 1.5s;
+            left: 12%;
+            animation-delay: 2.8s;
         }
 
 
         @keyframes sparkle {
-
             0% {
                 opacity: 0;
-
-                transform: scale(0.5);
+                transform: scale(0.2) rotate(0deg);
             }
 
-            40% {
+            35% {
+                opacity: 1;
+                transform: scale(1.5) rotate(45deg);
+            }
+
+            50% {
                 opacity: 0.8;
-
-                transform: scale(1);
+                transform: scale(2) rotate(45deg);
             }
 
-            60% {
-                opacity: 0.3;
-
-                transform: scale(0.7);
+            70% {
+                opacity: 0.2;
+                transform: scale(0.8) rotate(45deg);
             }
 
             100% {
                 opacity: 0;
-
-                transform: scale(0.5);
+                transform: scale(0.2) rotate(90deg);
             }
+        }
+
+
+        /* =========================
+           メニューボタン
+        ========================= */
+
+        .menu-button {
+            position: fixed;
+
+            top: 20px;
+            right: 20px;
+
+            z-index: 1000;
+
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 11px 17px;
+
+            border: none;
+
+            border-radius: 30px;
+
+            background: rgba(255, 255, 255, 0.92);
+
+            color: #e85d3f;
+
+            font-size: 15px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 5px 18px rgba(0, 0, 0, 0.12);
+
+            backdrop-filter: blur(8px);
+
+            transition: 0.2s;
+        }
+
+
+        .menu-button:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 22px rgba(0, 0, 0, 0.16);
+        }
+
+
+        .menu-icon {
+            font-size: 20px;
+            line-height: 1;
+        }
+
+
+        /* =========================
+           メニュー背景
+        ========================= */
+
+        .menu-overlay {
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background: rgba(0, 0, 0, 0.25);
+
+            z-index: 998;
+
+            opacity: 0;
+
+            pointer-events: none;
+
+            transition: opacity 0.3s;
+        }
+
+
+        .menu-overlay.open {
+            opacity: 1;
+
+            pointer-events: auto;
+        }
+
+
+        /* =========================
+           横から出てくるメニュー
+        ========================= */
+
+        .side-menu {
+            position: fixed;
+
+            top: 0;
+            right: 0;
+
+            width: 320px;
+            max-width: 85%;
+
+            height: 100%;
+
+            z-index: 999;
+
+            background:
+                rgba(255, 255, 255, 0.96);
+
+            backdrop-filter: blur(15px);
+
+            box-shadow:
+                -8px 0 30px rgba(0, 0, 0, 0.12);
+
+            padding: 90px 25px 30px;
+
+            transform: translateX(100%);
+
+            transition:
+                transform 0.35s
+                cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+
+        .side-menu.open {
+            transform: translateX(0);
+        }
+
+
+        /* =========================
+           メニュータイトル
+        ========================= */
+
+        .side-menu h2 {
+            margin: 0 0 30px;
+
+            text-align: left;
+
+            font-size: 25px;
+
+            color: #e85d3f;
+        }
+
+
+        .side-menu h2::after {
+            content: "";
+
+            display: block;
+
+            width: 45px;
+            height: 3px;
+
+            margin: 10px 0 0;
+
+            background: #e85d3f;
+
+            border-radius: 10px;
+        }
+
+
+        /* =========================
+           メニューリンク
+        ========================= */
+
+        .menu-link {
+            display: block;
+
+            padding: 16px 15px;
+
+            margin-bottom: 8px;
+
+            color: #444444;
+
+            text-decoration: none;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            border-radius: 10px;
+
+            transition: 0.2s;
+        }
+
+
+        .menu-link:hover {
+            background: #fff0eb;
+
+            color: #e85d3f;
+
+            padding-left: 20px;
         }
 
 
@@ -243,9 +473,11 @@
             min-height: 500px;
 
             display: flex;
+
             flex-direction: column;
 
             justify-content: center;
+
             align-items: center;
 
             padding: 60px 20px;
@@ -253,8 +485,8 @@
             background:
                 linear-gradient(
                     180deg,
-                    rgba(255, 245, 241, 0.65),
-                    rgba(255, 255, 255, 0.35)
+                    rgba(255, 245, 241, 0.55),
+                    rgba(255, 255, 255, 0.25)
                 );
 
             border-bottom: 1px solid #f3ddd6;
@@ -277,12 +509,12 @@
 
             margin-bottom: 20px;
 
-            animation: logoFloat 4s ease-in-out infinite;
+            animation:
+                logoFloat 4s ease-in-out infinite;
         }
 
 
         @keyframes logoFloat {
-
             0% {
                 transform: translateY(0);
             }
@@ -633,19 +865,18 @@
 
                 filter: blur(60px);
             }
-        }
 
 
-        /* =========================
-           動きを減らす設定
-        ========================= */
+            .menu-button {
+                top: 12px;
+                right: 12px;
 
-        @media (prefers-reduced-motion: reduce) {
+                padding: 10px 14px;
+            }
 
-            .light,
-            .sparkle,
-            .logo {
-                animation: none;
+
+            .side-menu {
+                width: 290px;
             }
         }
 
@@ -657,17 +888,14 @@
 
 
 <!-- =========================
-     動く背景
+     背景
 ========================= -->
 
 <div class="background">
 
     <div class="light one"></div>
-
     <div class="light two"></div>
-
     <div class="light three"></div>
-
 
     <div class="sparkles">
 
@@ -686,10 +914,83 @@
 
 
 <!-- =========================
+     メニューボタン
+========================= -->
+
+<button
+    class="menu-button"
+    onclick="toggleMenu()"
+>
+
+    <span class="menu-icon">☰</span>
+
+    <span>メニュー</span>
+
+</button>
+
+
+<!-- =========================
+     メニュー背景
+========================= -->
+
+<div
+    class="menu-overlay"
+    id="menuOverlay"
+    onclick="closeMenu()"
+></div>
+
+
+<!-- =========================
+     サイドメニュー
+========================= -->
+
+<nav
+    class="side-menu"
+    id="sideMenu"
+>
+
+    <h2>メニュー</h2>
+
+    <a
+        href="#home"
+        class="menu-link"
+        onclick="closeMenu()"
+    >
+        🏠 ホーム
+    </a>
+
+    <a
+        href="#about"
+        class="menu-link"
+        onclick="closeMenu()"
+    >
+        🌱 ひろ鯖とは
+    </a>
+
+    <a
+        href="#join"
+        class="menu-link"
+        onclick="closeMenu()"
+    >
+        🎮 参加方法
+    </a>
+
+    <a
+        href="#news"
+        class="menu-link"
+        onclick="closeMenu()"
+    >
+        📢 お知らせ
+    </a>
+
+</nav>
+
+
+<!-- =========================
      ヘッダー
 ========================= -->
 
-<header>
+<header id="home">
 
     <img
         src="ひろ鯖ロゴ.png"
@@ -713,7 +1014,7 @@
 
     <!-- ひろ鯖とは -->
 
-    <section>
+    <section id="about">
 
         <h2>ひろ鯖とは</h2>
 
@@ -750,7 +1051,10 @@
          参加方法
     ========================= -->
 
-    <section class="join-section">
+    <section
+        class="join-section"
+        id="join"
+    >
 
         <h2>参加方法</h2>
 
@@ -773,7 +1077,10 @@
 
                 <button
                     class="copy-button"
-                    onclick="copyText('java-address', 'java-message')"
+                    onclick="copyText(
+                        'java-address',
+                        'java-message'
+                    )"
                 >
                     コピー
                 </button>
@@ -809,7 +1116,10 @@
 
                 <button
                     class="copy-button"
-                    onclick="copyText('bedrock-address', 'bedrock-message')"
+                    onclick="copyText(
+                        'bedrock-address',
+                        'bedrock-message'
+                    )"
                 >
                     コピー
                 </button>
@@ -836,7 +1146,10 @@
 
                 <button
                     class="copy-button"
-                    onclick="copyText('bedrock-port', 'port-message')"
+                    onclick="copyText(
+                        'bedrock-port',
+                        'port-message'
+                    )"
                 >
                     コピー
                 </button>
@@ -868,7 +1181,10 @@
 
                 <button
                     class="copy-button"
-                    onclick="copyText('friend-name', 'friend-message')"
+                    onclick="copyText(
+                        'friend-name',
+                        'friend-message'
+                    )"
                 >
                     コピー
                 </button>
@@ -886,6 +1202,31 @@
 
     </section>
 
+
+    <!-- =========================
+         お知らせ
+    ========================= -->
+
+    <section
+        id="news"
+        style="margin-top: 90px;"
+    >
+
+        <h2>お知らせ</h2>
+
+        <div class="join-box">
+
+            <h3>📢 お知らせ</h3>
+
+            <p>
+                ここにひろ鯖からのお知らせを掲載できます。
+            </p>
+
+        </div>
+
+    </section>
+
+
 </div>
 
 
@@ -894,20 +1235,53 @@
 ========================= -->
 
 <footer>
+
     © 2026 ひろ鯖
+
 </footer>
 
 
 <!-- =========================
-     コピー機能
+     JavaScript
 ========================= -->
 
 <script>
 
+function toggleMenu() {
+
+    const menu =
+        document.getElementById("sideMenu");
+
+    const overlay =
+        document.getElementById("menuOverlay");
+
+    menu.classList.toggle("open");
+
+    overlay.classList.toggle("open");
+}
+
+
+function closeMenu() {
+
+    const menu =
+        document.getElementById("sideMenu");
+
+    const overlay =
+        document.getElementById("menuOverlay");
+
+    menu.classList.remove("open");
+
+    overlay.classList.remove("open");
+}
+
+
 function copyText(textId, messageId) {
 
     const text =
-        document.getElementById(textId).textContent.trim();
+        document
+            .getElementById(textId)
+            .textContent
+            .trim();
 
     const message =
         document.getElementById(messageId);
