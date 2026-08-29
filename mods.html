@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ひろ鯖 - 使用可能クライアント・MOD</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            font-family:
+                Arial,
+                "Noto Sans JP",
+                sans-serif;
+
+            background: #ffffff;
+
+            color: #333333;
+
+            overflow-x: hidden;
+
+        }
+
+
+        /* =========================
+           背景
+        ========================= */
+
+        .background {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            z-index: -1;
+
+            overflow: hidden;
+
+            background: #ffffff;
+
+        }
+
+
+        .light {
+
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            border-radius: 50%;
+
+            filter: blur(110px);
+
+            opacity: 0.14;
+
+        }
+
+
+        .light.one {
+
+            background: #ffb49f;
+
+            top: -180px;
+            left: -150px;
+
+            animation:
+                moveLight1
+                18s
+                ease-in-out
+                infinite
+                alternate;
+
+        }
+
+
+        .light.two {
+
+            background: #ffcabb;
+
+            top: 35%;
+            right: -220px;
+
+            animation:
+                moveLight2
+                21s
+                ease-in-out
+                infinite
+                alternate;
+
+        }
+
+
+        .light.three {
+
+            background: #ffe0d5;
+
+            bottom: -250px;
+            left: 30%;
+
+            animation:
+                moveLight3
+                24s
+                ease-in-out
+                infinite
+                alternate;
+
+        }
+
+
+        @keyframes moveLight1 {
+
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(100px, 60px);
+            }
+
+        }
+
+
+        @keyframes moveLight2 {
+
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(-90px, -60px);
+            }
+
+        }
+
+
+        @keyframes moveLight3 {
+
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(80px, -60px);
+            }
+
+        }
+
+
+        /* =========================
+           ヘッダー
+        ========================= */
+
+        header {
+
+            padding:
+                70px 20px 55px;
+
+            text-align:
+                center;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(232, 93, 63, 0.96),
+                    rgba(239, 111, 82, 0.92)
+                );
+
+            color:
+                white;
+
+        }
+
+
+        header h1 {
+
+            margin: 0;
+
+            font-size:
+                38px;
+
+        }
+
+
+        header p {
+
+            margin:
+                12px 0 0;
+
+            font-size:
+                16px;
+
+            opacity:
+                0.95;
+
+        }
+
+
+        /* =========================
+           メイン
+        ========================= */
+
+        .content {
+
+            max-width:
+                900px;
+
+            margin:
+                0 auto;
+
+            padding:
+                55px 20px 90px;
+
+        }
+
+
+        /* =========================
+           戻るボタン
+        ========================= */
+
+        .back-button {
+
+            display:
+                inline-block;
+
+            margin-bottom:
+                35px;
+
+            padding:
+                10px 18px;
+
+            background:
+                #fff1ec;
+
+            color:
+                #e85d3f;
+
+            text-decoration:
+                none;
+
+            border-radius:
+                9px;
+
+            font-weight:
+                bold;
+
+            transition:
+                0.2s;
+
+        }
+
+
+        .back-button:hover {
+
+            background:
+                #e85d3f;
+
+            color:
+                white;
+
+            transform:
+                translateX(-3px);
+
+        }
+
+
+        /* =========================
+           セクション
+        ========================= */
+
+        .mod-section {
+
+            margin-bottom:
+                35px;
+
+            padding:
+                35px;
+
+            background:
+                rgba(255, 255, 255, 0.94);
+
+            border:
+                1px solid #eeeeee;
+
+            border-radius:
+                18px;
+
+            box-shadow:
+                0 7px 25px
+                rgba(0, 0, 0, 0.05);
+
+        }
+
+
+        .section-title {
+
+            margin:
+                0 0 15px;
+
+            color:
+                #e85d3f;
+
+            font-size:
+                28px;
+
+        }
+
+
+        .section-intro {
+
+            margin:
+                0 0 25px;
+
+            color:
+                #666666;
+
+            line-height:
+                1.9;
+
+        }
+
+
+        /* =========================
+           リスト
+        ========================= */
+
+        .item-list {
+
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            gap:
+                10px;
+
+        }
+
+
+        .item {
+
+            padding:
+                14px 17px;
+
+            background:
+                #fff8f5;
+
+            border:
+                1px solid #f2e5e0;
+
+            border-radius:
+                10px;
+
+            color:
+                #555555;
+
+            line-height:
+                1.7;
+
+        }
+
+
+        .item strong {
+
+            color:
+                #444444;
+
+        }
+
+
+        /* =========================
+           カテゴリー
+        ========================= */
+
+        .category {
+
+            margin-top:
+                22px;
+
+        }
+
+
+        .category:first-child {
+
+            margin-top:
+                0;
+
+        }
+
+
+        .category-title {
+
+            margin:
+                0 0 10px;
+
+            font-size:
+                17px;
+
+            color:
+                #e85d3f;
+
+        }
+
+
+        /* =========================
+           禁止エリア
+        ========================= */
+
+        .danger {
+
+            background:
+                #fff6f3;
+
+            border:
+                1px solid #f2d6cd;
+
+        }
+
+
+        .danger .item {
+
+            background:
+                #ffffff;
+
+            border:
+                1px solid #eeeeee;
+
+        }
+
+
+        .danger-title {
+
+            color:
+                #d94f32;
+
+        }
+
+
+        /* =========================
+           注意
+        ========================= */
+
+        .notice {
+
+            margin-top:
+                25px;
+
+            padding:
+                18px 20px;
+
+            background:
+                #fff5ee;
+
+            border-left:
+                4px solid #e85d3f;
+
+            border-radius:
+                8px;
+
+            color:
+                #666666;
+
+            line-height:
+                1.8;
+
+        }
+
+
+        /* =========================
+           フッター
+        ========================= */
+
+        footer {
+
+            padding:
+                30px 20px;
+
+            text-align:
+                center;
+
+            background:
+                #fafafa;
+
+            border-top:
+                1px solid #eeeeee;
+
+            color:
+                #999999;
+
+            font-size:
+                14px;
+
+        }
+
+
+        /* =========================
+           スマホ
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            header {
+
+                padding:
+                    60px 15px 45px;
+
+            }
+
+
+            header h1 {
+
+                font-size:
+                    28px;
+
+            }
+
+
+            .content {
+
+                padding:
+                    40px 15px 60px;
+
+            }
+
+
+            .mod-section {
+
+                padding:
+                    25px 20px;
+
+            }
+
+
+            .section-title {
+
+                font-size:
+                    24px;
+
+            }
+
+
+            .item {
+
+                font-size:
+                    14px;
+
+            }
+
+
+            .light {
+
+                width:
+                    320px;
+
+                height:
+                    320px;
+
+                filter:
+                    blur(75px);
+
+                opacity:
+                    0.13;
+
+            }
+
+        }
+
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .light {
+
+                animation:
+                    none;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         背景
+    ========================= -->
+
+    <div class="background">
+
+        <div class="light one"></div>
+
+        <div class="light two"></div>
+
+        <div class="light three"></div>
+
+    </div>
+
+
+
+    <!-- =========================
+         ヘッダー
+    ========================= -->
+
+    <header>
+
+        <h1>
+            🛠️ 使用可能クライアント・MOD
+        </h1>
+
+        <p>
+            ひろ鯖で使用できるクライアント・MOD一覧
+        </p>
+
+    </header>
+
+
+
+    <!-- =========================
+         メイン
+    ========================= -->
+
+    <main class="content">
+
+
+        <a
+            href="index.html"
+            class="back-button"
+        >
+            ← ホームへ戻る
+        </a>
+
+
+
+        <!-- =========================
+             説明
+        ========================= -->
+
+        <section class="mod-section">
+
+            <h2 class="section-title">
+                🛠️ 使用可能クライアント・MOD
+            </h2>
+
+            <p class="section-intro">
+
+                当サーバーでは、以下のクライアント・MODを使用できます。
+
+                <br>
+
+                記載されていないものは、
+                使用前に運営へ確認してください。
+
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             許可クライアント
+        ========================= -->
+
+        <section class="mod-section">
+
+            <h2 class="section-title">
+                🖥️ 許可クライアント
+            </h2>
+
+
+            <div class="item-list">
+
+                <div class="item">
+                    <strong>Lunar Client</strong>
+                </div>
+
+                <div class="item">
+                    <strong>Badlion Client</strong>
+                </div>
+
+                <div class="item">
+                    <strong>Feather Client</strong>
+                </div>
+
+                <div class="item">
+                    <strong>LabyMod</strong>
+                </div>
+
+                <div class="item">
+                    <strong>その他、通常のMinecraftプレイを目的としたクライアント</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             許可MOD
+        ========================= -->
+
+        <section class="mod-section">
+
+            <h2 class="section-title">
+                🧩 許可MOD
+            </h2>
+
+
+
+            <div class="category">
+
+                <h3 class="category-title">
+                    ⚡ 軽量化
+                </h3>
+
+                <div class="item">
+                    Sodium / Lithium / FerriteCore / EntityCulling 等
+                </div>
+
+            </div>
+
+
+
+            <div class="category">
+
+                <h3 class="category-title">
+                    🏗️ 建築
+                </h3>
+
+                <div class="item">
+                    Litematica / Schematica 等
+                </div>
+
+            </div>
+
+
+
+            <div class="category">
+
+                <h3 class="category-title">
+                    🎥 録画
+                </h3>
+
+                <div class="item">
+                    Replay Mod 等
+                </div>
+
+            </div>
+
+
+
+            <div class="category">
+
+                <h3 class="category-title">
+                    🌐 翻訳
+                </h3>
+
+                <div class="item">
+                    翻訳・チャット翻訳MOD
+                </div>
+
+            </div>
+
+
+
+            <div class="category">
+
+                <h3 class="category-title">
+                    📊 HUD
+                </h3>
+
+                <div class="item">
+                    Keystrokes / CPS / FPS / Ping / 座標 / Armor Status 等
+                </div>
+
+            </div>
+
+
+
+            <div class="category">
+
+                <h3 class="category-title">
+                    🔍 視認性
+                </h3>
+
+                <div class="item">
+                    Zoom / 明るさ調整 等
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================
+             禁止
+        ========================= -->
+
+        <section class="mod-section danger">
+
+            <h2 class="section-title danger-title">
+                🚫 禁止
+            </h2>
+
+
+            <p class="section-intro">
+
+                以下の機能は、クライアント・MODを問わず禁止します。
+
+            </p>
+
+
+            <div class="item-list">
+
+                <div class="item">
+                    X-Ray・透過
+                </div>
+
+                <div class="item">
+                    自動クリック・自動攻撃
+                </div>
+
+                <div class="item">
+                    自動採掘・自動建築・自動移動
+                </div>
+
+                <div class="item">
+                    プレイヤー等の位置を不正に取得・表示する機能
+                </div>
+
+                <div class="item">
+                    その他、通常のプレイでは得られない情報を取得する機能
+                </div>
+
+                <div class="item">
+                    ゲームバランスを不正に変更する機能
+                </div>
+
+            </div>
+
+
+            <div class="notice">
+
+                ⚠️ 記載されていないクライアントやMODについては、
+                使用前に運営へ確認してください。
+
+                <br>
+
+                サーバーの公平性や安全性を損なう機能については、
+                許可されているクライアントに含まれていても
+                使用を禁止する場合があります。
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         フッター
+    ========================= -->
+
+    <footer>
+
+        © 2026 ひろ鯖
+
+    </footer>
+
+
+</body>
+
+</html>
