@@ -10,7 +10,16 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>ひろ鯖 - コマンド一覧</title>
+    <title>コマンド一覧 - ひろ鯖</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
 
 
     <style>
@@ -30,15 +39,14 @@
             margin: 0;
 
             font-family:
-                Arial,
                 "Noto Sans JP",
                 sans-serif;
 
             background: #ffffff;
 
-            color: #333333;
+            color: #292929;
 
-            overflow-x: hidden;
+            letter-spacing: 0.01em;
 
         }
 
@@ -51,11 +59,7 @@
 
             position: fixed;
 
-            top: 0;
-            left: 0;
-
-            width: 100%;
-            height: 100%;
+            inset: 0;
 
             z-index: -1;
 
@@ -70,104 +74,211 @@
 
             position: absolute;
 
-            width: 500px;
-            height: 500px;
+            width: 420px;
+
+            height: 420px;
 
             border-radius: 50%;
 
-            filter: blur(110px);
+            filter: blur(130px);
 
-            opacity: 0.16;
+            opacity: 0.06;
 
         }
 
 
         .light.one {
 
-            background: #ffb49f;
+            background: #ff704f;
 
-            top: -180px;
+            top: -200px;
+
             left: -150px;
 
             animation:
-                moveLight1
-                16s
-                ease-in-out
-                infinite
-                alternate;
+                float1 18s ease-in-out infinite alternate;
 
         }
 
 
         .light.two {
 
-            background: #ffcabb;
+            background: #ff9b82;
 
-            top: 35%;
-            right: -220px;
+            right: -200px;
 
-            animation:
-                moveLight2
-                19s
-                ease-in-out
-                infinite
-                alternate;
-
-        }
-
-
-        .light.three {
-
-            background: #ffe0d5;
-
-            bottom: -250px;
-            left: 30%;
+            top: 45%;
 
             animation:
-                moveLight3
-                22s
-                ease-in-out
-                infinite
-                alternate;
+                float2 22s ease-in-out infinite alternate;
 
         }
 
 
-        @keyframes moveLight1 {
+        @keyframes float1 {
 
-            0% {
-                transform: translate(0, 0);
-            }
-
-            100% {
-                transform: translate(130px, 80px);
+            to {
+                transform:
+                    translate(80px, 50px);
             }
 
         }
 
 
-        @keyframes moveLight2 {
+        @keyframes float2 {
 
-            0% {
-                transform: translate(0, 0);
-            }
-
-            100% {
-                transform: translate(-120px, -70px);
+            to {
+                transform:
+                    translate(-70px, -40px);
             }
 
         }
 
 
-        @keyframes moveLight3 {
+        /* =========================
+           メニューボタン
+        ========================= */
 
-            0% {
-                transform: translate(0, 0);
-            }
+        .menu-button {
 
-            100% {
-                transform: translate(100px, -80px);
-            }
+            position: fixed;
+
+            top: 22px;
+
+            right: 22px;
+
+            z-index: 2000;
+
+            width: 50px;
+
+            height: 50px;
+
+            border: 0;
+
+            border-radius: 50%;
+
+            background: #e85d3f;
+
+            color: white;
+
+            font-size: 22px;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.12);
+
+            transition: 0.2s;
+
+        }
+
+
+        .menu-button:hover {
+
+            transform:
+                scale(1.06);
+
+            background:
+                #d94f32;
+
+        }
+
+
+        /* =========================
+           サイドメニュー
+        ========================= */
+
+        .side-menu {
+
+            position: fixed;
+
+            top: 0;
+
+            right: -330px;
+
+            width: 310px;
+
+            height: 100vh;
+
+            z-index: 1500;
+
+            padding:
+                95px 30px 30px;
+
+            background:
+                rgba(255, 255, 255, 0.98);
+
+            box-shadow:
+                -10px 0 35px
+                rgba(0, 0, 0, 0.10);
+
+            transition:
+                right 0.3s ease;
+
+        }
+
+
+        .side-menu.open {
+
+            right: 0;
+
+        }
+
+
+        .side-menu h2 {
+
+            margin:
+                0 0 30px;
+
+            font-size:
+                24px;
+
+            font-weight:
+                800;
+
+            color:
+                #222222;
+
+        }
+
+
+        .menu-link {
+
+            display:
+                block;
+
+            padding:
+                13px 5px;
+
+            border-bottom:
+                1px solid #eeeeee;
+
+            color:
+                #333333;
+
+            text-decoration:
+                none;
+
+            font-size:
+                15px;
+
+            font-weight:
+                500;
+
+            transition:
+                0.2s;
+
+        }
+
+
+        .menu-link:hover {
+
+            color:
+                #e85d3f;
+
+            padding-left:
+                8px;
 
         }
 
@@ -178,41 +289,49 @@
 
         header {
 
-            padding: 70px 20px 55px;
-
-            text-align: center;
+            padding:
+                75px 20px 55px;
 
             background:
                 linear-gradient(
-                    180deg,
-                    rgba(255, 247, 244, 0.65),
-                    rgba(255, 255, 255, 0.35)
+                    135deg,
+                    #e85d3f,
+                    #ef7658
                 );
 
-            border-bottom:
-                1px solid #f3ddd6;
+            color:
+                white;
+
+            text-align:
+                center;
 
         }
 
 
         header h1 {
 
-            margin: 0;
+            margin:
+                0;
 
-            color: #e85d3f;
+            font-size:
+                38px;
 
-            font-size: 40px;
+            font-weight:
+                800;
 
         }
 
 
         header p {
 
-            margin: 12px 0 0;
+            margin:
+                12px 0 0;
 
-            color: #777777;
+            font-size:
+                15px;
 
-            font-size: 16px;
+            opacity:
+                0.9;
 
         }
 
@@ -221,240 +340,256 @@
            メイン
         ========================= */
 
-        .content {
+        main {
 
-            max-width: 850px;
-
-            margin: 0 auto;
-
-            padding:
-                55px
-                20px
-                80px;
-
-        }
-
-
-        /* =========================
-           戻るボタン
-        ========================= */
-
-        .back-button {
-
-            display: inline-block;
-
-            margin-bottom: 35px;
-
-            padding:
-                10px
-                18px;
-
-            background: #fff1ec;
-
-            color: #e85d3f;
-
-            text-decoration: none;
-
-            border-radius: 9px;
-
-            font-weight: bold;
-
-            transition: 0.2s;
-
-        }
-
-
-        .back-button:hover {
-
-            background: #e85d3f;
-
-            color: white;
-
-            transform: translateX(-3px);
-
-        }
-
-
-        /* =========================
-           見出し
-        ========================= */
-
-        h2 {
+            max-width:
+                900px;
 
             margin:
-                0
-                0
-                35px;
+                0 auto;
 
-            text-align: center;
-
-            font-size: 30px;
-
-            color: #333333;
-
-        }
-
-
-        h2::after {
-
-            content: "";
-
-            display: block;
-
-            width: 50px;
-
-            height: 4px;
-
-            margin:
-                12px
-                auto
-                0;
-
-            background: #e85d3f;
-
-            border-radius: 10px;
+            padding:
+                70px 25px 100px;
 
         }
 
 
         /* =========================
-           コマンドカード
+           戻る
         ========================= */
 
-        .command-card {
+        .back {
 
-            display: flex;
+            display:
+                inline-block;
 
-            align-items: center;
-
-            gap: 20px;
-
-            padding:
-                22px
-                25px;
-
-            margin-bottom: 15px;
-
-            background:
-                rgba(255, 255, 255, 0.94);
-
-            border:
-                1px solid #eeeeee;
-
-            border-radius: 15px;
-
-            box-shadow:
-                0
-                6px
-                20px
-                rgba(0, 0, 0, 0.05);
-
-            transition:
-                transform 0.2s,
-                box-shadow 0.2s,
-                border-color 0.2s;
-
-        }
-
-
-        .command-card:hover {
-
-            transform:
-                translateY(-3px);
-
-            border-color:
-                #f2c2b5;
-
-            box-shadow:
-                0
-                9px
-                25px
-                rgba(232, 93, 63, 0.09);
-
-        }
-
-
-        /* =========================
-           コマンド名
-        ========================= */
-
-        .command {
-
-            flex-shrink: 0;
-
-            padding:
-                10px
-                14px;
-
-            background:
-                #fff1ec;
+            margin-bottom:
+                45px;
 
             color:
                 #e85d3f;
 
-            border-radius:
-                8px;
-
-            font-family:
-                Consolas,
-                monospace;
+            text-decoration:
+                none;
 
             font-size:
-                16px;
+                14px;
 
             font-weight:
-                bold;
+                600;
+
+            transition:
+                0.2s;
+
+        }
+
+
+        .back:hover {
+
+            transform:
+                translateX(-4px);
 
         }
 
 
         /* =========================
-           説明
+           セクション
         ========================= */
 
-        .description {
+        .section {
+
+            margin-bottom:
+                70px;
+
+        }
+
+
+        .section-title {
+
+            margin:
+                0 0 15px;
+
+            padding-bottom:
+                18px;
+
+            border-bottom:
+                2px solid #eeeeee;
+
+            font-size:
+                29px;
+
+            font-weight:
+                800;
+
+            color:
+                #222222;
+
+        }
+
+
+        .section-title::before {
+
+            content:
+                "";
+
+            display:
+                inline-block;
+
+            width:
+                5px;
+
+            height:
+                29px;
+
+            margin-right:
+                13px;
+
+            vertical-align:
+                -4px;
+
+            border-radius:
+                5px;
+
+            background:
+                #e85d3f;
+
+        }
+
+
+        .intro {
+
+            margin:
+                0 0 35px;
 
             color:
                 #666666;
 
             font-size:
-                16px;
+                15px;
 
             line-height:
-                1.7;
+                2;
 
         }
 
 
         /* =========================
-           補足
+           コマンド
         ========================= */
 
-        .info-box {
+        .command {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                20px;
+
+            padding:
+                22px 0;
+
+            border-bottom:
+                1px solid #eeeeee;
+
+        }
+
+
+        .command:last-child {
+
+            border-bottom:
+                none;
+
+        }
+
+
+        .command-code {
+
+            flex-shrink:
+                0;
+
+            min-width:
+                190px;
+
+            padding:
+                10px 14px;
+
+            border-radius:
+                7px;
+
+            background:
+                #292929;
+
+            color:
+                #ffffff;
+
+            font-family:
+                Consolas,
+                "Courier New",
+                monospace;
+
+            font-size:
+                14px;
+
+            font-weight:
+                600;
+
+        }
+
+
+        .command-description {
+
+            color:
+                #555555;
+
+            font-size:
+                14px;
+
+            line-height:
+                1.8;
+
+        }
+
+
+        /* =========================
+           注意
+        ========================= */
+
+        .notice {
 
             margin-top:
                 35px;
 
             padding:
-                20px;
+                25px;
 
             background:
-                #fff5ee;
+                #fff7f4;
 
             border-left:
                 4px solid #e85d3f;
 
             border-radius:
-                8px;
+                0 8px 8px 0;
+
+        }
+
+
+        .notice p {
+
+            margin:
+                0;
 
             color:
-                #666666;
-
-            line-height:
-                1.8;
+                #555555;
 
             font-size:
                 14px;
+
+            line-height:
+                2;
 
         }
 
@@ -466,23 +601,19 @@
         footer {
 
             padding:
-                30px
-                20px;
-
-            text-align:
-                center;
-
-            background:
-                #f8f8f8;
+                35px 20px;
 
             border-top:
                 1px solid #eeeeee;
+
+            text-align:
+                center;
 
             color:
                 #999999;
 
             font-size:
-                14px;
+                13px;
 
         }
 
@@ -493,13 +624,35 @@
 
         @media (max-width: 600px) {
 
+            .menu-button {
+
+                top:
+                    15px;
+
+                right:
+                    15px;
+
+                width:
+                    46px;
+
+                height:
+                    46px;
+
+            }
+
+
+            .side-menu {
+
+                width:
+                    280px;
+
+            }
+
 
             header {
 
                 padding:
-                    60px
-                    15px
-                    45px;
+                    65px 20px 45px;
 
             }
 
@@ -512,92 +665,75 @@
             }
 
 
-            header p {
-
-                font-size:
-                    14px;
-
-            }
-
-
-            .content {
+            main {
 
                 padding:
-                    45px
-                    15px
-                    60px;
+                    50px 20px 70px;
 
             }
 
 
-            h2 {
+            .section-title {
 
                 font-size:
-                    27px;
+                    24px;
 
             }
 
 
-            .command-card {
+            .section-title::before {
 
-                flex-direction:
-                    column;
+                height:
+                    24px;
 
-                align-items:
-                    flex-start;
-
-                gap:
-                    12px;
-
-                padding:
-                    20px;
+                width:
+                    4px;
 
             }
 
 
             .command {
 
-                font-size:
-                    15px;
+                display:
+                    block;
+
+                padding:
+                    20px 0;
 
             }
 
 
-            .description {
+            .command-code {
 
-                font-size:
-                    15px;
+                min-width:
+                    0;
+
+                display:
+                    inline-block;
+
+                margin-bottom:
+                    10px;
 
             }
 
 
-            .light {
+            .command-description {
 
-                width:
-                    320px;
-
-                height:
-                    320px;
-
-                filter:
-                    blur(75px);
-
-                opacity:
-                    0.13;
+                font-size:
+                    14px;
 
             }
 
         }
 
 
-        /* =========================
-           動きを減らす設定
-        ========================= */
-
         @media (prefers-reduced-motion: reduce) {
 
             .light {
-                animation: none;
+
+                animation:
+                    none;
+
             }
 
         }
@@ -610,9 +746,7 @@
 <body>
 
 
-    <!-- =========================
-         背景
-    ========================= -->
+    <!-- 背景 -->
 
     <div class="background">
 
@@ -620,44 +754,111 @@
 
         <div class="light two"></div>
 
-        <div class="light three"></div>
-
     </div>
 
 
 
-    <!-- =========================
-         ヘッダー
-    ========================= -->
+    <!-- メニューボタン -->
+
+    <button
+        class="menu-button"
+        onclick="toggleMenu()"
+        aria-label="メニュー"
+    >
+        ☰
+    </button>
+
+
+
+    <!-- メニュー -->
+
+    <nav
+        class="side-menu"
+        id="sideMenu"
+    >
+
+        <h2>
+            MENU
+        </h2>
+
+
+        <a
+            href="index.html"
+            class="menu-link"
+        >
+            ホーム
+        </a>
+
+
+        <a
+            href="index.html#about"
+            class="menu-link"
+        >
+            ひろ鯖とは
+        </a>
+
+
+        <a
+            href="index.html#join"
+            class="menu-link"
+        >
+            参加方法
+        </a>
+
+
+        <a
+            href="rules.html"
+            class="menu-link"
+        >
+            規約
+        </a>
+
+
+        <a
+            href="mods.html"
+            class="menu-link"
+        >
+            使用可能MOD
+        </a>
+
+
+        <a
+            href="commands.html"
+            class="menu-link"
+        >
+            コマンド一覧
+        </a>
+
+    </nav>
+
+
+
+    <!-- ヘッダー -->
 
     <header>
 
         <h1>
-            📖 コマンド一覧
+            コマンド一覧
         </h1>
 
         <p>
-            ひろ鯖で使用できるコマンドをご紹介します
+            ひろ鯖で使用できる便利なコマンド
         </p>
 
     </header>
 
 
 
-    <!-- =========================
-         メイン
-    ========================= -->
+    <!-- メイン -->
 
-    <main class="content">
+    <main>
 
-
-        <!-- 戻る -->
 
         <a
             href="index.html"
-            class="back-button"
+            class="back"
         >
-            ← ホームへ戻る
+            ← ホームに戻る
         </a>
 
 
@@ -666,143 +867,176 @@
              基本コマンド
         ========================= -->
 
-        <h2>
-            基本コマンド
-        </h2>
+        <section class="section">
+
+            <h2 class="section-title">
+                基本コマンド
+            </h2>
 
 
+            <p class="intro">
 
-        <!-- spawn -->
+                ひろ鯖でよく使用する基本的なコマンドです。
 
-        <div class="command-card">
+            </p>
+
+
 
             <div class="command">
-                /spawn
-            </div>
 
-            <div class="description">
+                <div class="command-code">
+                    /spawn
+                </div>
 
-                初期スポーン地点へ移動します。
-
-            </div>
-
-        </div>
-
-
-
-        <!-- tpa -->
-
-        <div class="command-card">
-
-            <div class="command">
-                /tpa &lt;プレイヤー&gt;
-            </div>
-
-            <div class="description">
-
-                指定したプレイヤーに
-                テレポート申請を送ります。
+                <div class="command-description">
+                    初期スポーン地点へテレポートします。
+                </div>
 
             </div>
 
-        </div>
 
 
-
-        <!-- tpahere -->
-
-        <div class="command-card">
-
-            <div class="command">
-                /tpahere &lt;プレイヤー&gt;
-            </div>
-
-            <div class="description">
-
-                指定したプレイヤーを
-                自分のいる場所へ呼ぶための
-                テレポート申請を送ります。
-
-            </div>
-
-        </div>
-
-
-
-        <!-- tpaccept -->
-
-        <div class="command-card">
-
-            <div class="command">
-                /tpaccept
-            </div>
-
-            <div class="description">
-
-                届いたテレポート申請を
-                許可します。
-
-            </div>
-
-        </div>
-
-
-
-        <!-- tpdeny -->
-
-        <div class="command-card">
-
-            <div class="command">
-                /tpdeny
-            </div>
-
-            <div class="description">
-
-                届いたテレポート申請を
-                拒否します。
-
-            </div>
-
-        </div>
-
-
-
-        <!-- tpacancel -->
-
-        <div class="command-card">
-
-            <div class="command">
-                /tpacancel
-            </div>
-
-            <div class="description">
-
-                自分が送った
-                テレポート申請を
-                キャンセルします。
-
-            </div>
-
-        </div>
+        </section>
 
 
 
         <!-- =========================
-             補足
+             テレポート
         ========================= -->
 
-        <div class="info-box">
+        <section class="section">
 
-            💡 <strong>コマンドについて</strong><br>
+            <h2 class="section-title">
+                テレポート
+            </h2>
 
-            コマンドを使用する際は、
-            「&lt;プレイヤー&gt;」の部分を
-            実際のプレイヤー名に置き換えてください。
 
-            <br><br>
+            <p class="intro">
 
-            例：
-            <strong>/tpa Hiro</strong>
+                他のプレイヤーとの移動に使用するコマンドです。
+
+            </p>
+
+
+
+            <div class="command">
+
+                <div class="command-code">
+                    /tpa プレイヤー名
+                </div>
+
+                <div class="command-description">
+                    指定したプレイヤーへテレポートする
+                    リクエストを送ります。
+                </div>
+
+            </div>
+
+
+
+            <div class="command">
+
+                <div class="command-code">
+                    /tpahere プレイヤー名
+                </div>
+
+                <div class="command-description">
+                    指定したプレイヤーを自分の場所へ
+                    テレポートさせるリクエストを送ります。
+                </div>
+
+            </div>
+
+
+
+            <div class="command">
+
+                <div class="command-code">
+                    /tpaccept
+                </div>
+
+                <div class="command-description">
+                    届いているテレポートリクエストを
+                    承認します。
+                </div>
+
+            </div>
+
+
+
+            <div class="command">
+
+                <div class="command-code">
+                    /tpdeny
+                </div>
+
+                <div class="command-description">
+                    届いているテレポートリクエストを
+                    拒否します。
+                </div>
+
+            </div>
+
+
+
+        </section>
+
+
+
+        <!-- =========================
+             その他
+        ========================= -->
+
+        <section class="section">
+
+            <h2 class="section-title">
+                その他
+            </h2>
+
+
+            <p class="intro">
+
+                今後、便利なコマンドを追加していく予定です。
+
+            </p>
+
+
+
+            <div class="command">
+
+                <div class="command-code">
+                    /help
+                </div>
+
+                <div class="command-description">
+                    使用できるコマンドの一覧を確認できます。
+                </div>
+
+            </div>
+
+
+
+        </section>
+
+
+
+        <!-- 注意 -->
+
+        <div class="notice">
+
+            <p>
+
+                ※コマンドの仕様や使用できるコマンドは、
+                サーバーのアップデートによって変更される
+                場合があります。
+
+                <br><br>
+
+                コマンドが使用できない場合は、
+                サーバー内のお知らせや運営からの案内を
+                ご確認ください。
+
+            </p>
 
         </div>
 
@@ -811,15 +1045,30 @@
 
 
 
-    <!-- =========================
-         フッター
-    ========================= -->
+    <!-- フッター -->
 
     <footer>
 
         © 2026 ひろ鯖
+        <br>
+        HiroSaba Official Website
 
     </footer>
+
+
+
+    <script>
+
+        function toggleMenu() {
+
+            const menu =
+                document.getElementById("sideMenu");
+
+            menu.classList.toggle("open");
+
+        }
+
+    </script>
 
 
 </body>
