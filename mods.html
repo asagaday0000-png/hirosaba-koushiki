@@ -10,7 +10,16 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>ひろ鯖 - 使用可能クライアント・MOD</title>
+    <title>使用可能MOD - ひろ鯖</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
 
 
     <style>
@@ -30,15 +39,14 @@
             margin: 0;
 
             font-family:
-                Arial,
                 "Noto Sans JP",
                 sans-serif;
 
             background: #ffffff;
 
-            color: #333333;
+            color: #292929;
 
-            overflow-x: hidden;
+            letter-spacing: 0.01em;
 
         }
 
@@ -51,11 +59,7 @@
 
             position: fixed;
 
-            top: 0;
-            left: 0;
-
-            width: 100%;
-            height: 100%;
+            inset: 0;
 
             z-index: -1;
 
@@ -70,104 +74,207 @@
 
             position: absolute;
 
-            width: 500px;
-            height: 500px;
+            width: 420px;
+
+            height: 420px;
 
             border-radius: 50%;
 
-            filter: blur(110px);
+            filter: blur(130px);
 
-            opacity: 0.14;
+            opacity: 0.06;
 
         }
 
 
         .light.one {
 
-            background: #ffb49f;
+            background: #ff704f;
 
-            top: -180px;
+            top: -200px;
+
             left: -150px;
 
             animation:
-                moveLight1
-                18s
-                ease-in-out
-                infinite
-                alternate;
+                float1 18s ease-in-out infinite alternate;
 
         }
 
 
         .light.two {
 
-            background: #ffcabb;
+            background: #ff9b82;
 
-            top: 35%;
-            right: -220px;
+            right: -200px;
 
-            animation:
-                moveLight2
-                21s
-                ease-in-out
-                infinite
-                alternate;
-
-        }
-
-
-        .light.three {
-
-            background: #ffe0d5;
-
-            bottom: -250px;
-            left: 30%;
+            top: 45%;
 
             animation:
-                moveLight3
-                24s
-                ease-in-out
-                infinite
-                alternate;
+                float2 22s ease-in-out infinite alternate;
 
         }
 
 
-        @keyframes moveLight1 {
+        @keyframes float1 {
 
-            0% {
-                transform: translate(0, 0);
-            }
-
-            100% {
-                transform: translate(100px, 60px);
+            to {
+                transform:
+                    translate(80px, 50px);
             }
 
         }
 
 
-        @keyframes moveLight2 {
+        @keyframes float2 {
 
-            0% {
-                transform: translate(0, 0);
-            }
-
-            100% {
-                transform: translate(-90px, -60px);
+            to {
+                transform:
+                    translate(-70px, -40px);
             }
 
         }
 
 
-        @keyframes moveLight3 {
+        /* =========================
+           メニュー
+        ========================= */
 
-            0% {
-                transform: translate(0, 0);
-            }
+        .menu-button {
 
-            100% {
-                transform: translate(80px, -60px);
-            }
+            position: fixed;
+
+            top: 22px;
+
+            right: 22px;
+
+            z-index: 2000;
+
+            width: 50px;
+
+            height: 50px;
+
+            border: 0;
+
+            border-radius: 50%;
+
+            background: #e85d3f;
+
+            color: white;
+
+            font-size: 22px;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.12);
+
+            transition: 0.2s;
+
+        }
+
+
+        .menu-button:hover {
+
+            transform:
+                scale(1.06);
+
+            background:
+                #d94f32;
+
+        }
+
+
+        .side-menu {
+
+            position: fixed;
+
+            top: 0;
+
+            right: -330px;
+
+            width: 310px;
+
+            height: 100vh;
+
+            z-index: 1500;
+
+            padding:
+                95px 30px 30px;
+
+            background:
+                rgba(255, 255, 255, 0.98);
+
+            box-shadow:
+                -10px 0 35px
+                rgba(0, 0, 0, 0.10);
+
+            transition:
+                right 0.3s ease;
+
+        }
+
+
+        .side-menu.open {
+
+            right: 0;
+
+        }
+
+
+        .side-menu h2 {
+
+            margin:
+                0 0 30px;
+
+            font-size:
+                24px;
+
+            font-weight:
+                800;
+
+            color:
+                #222222;
+
+        }
+
+
+        .menu-link {
+
+            display:
+                block;
+
+            padding:
+                13px 5px;
+
+            border-bottom:
+                1px solid #eeeeee;
+
+            color:
+                #333333;
+
+            text-decoration:
+                none;
+
+            font-size:
+                15px;
+
+            font-weight:
+                500;
+
+            transition:
+                0.2s;
+
+        }
+
+
+        .menu-link:hover {
+
+            color:
+                #e85d3f;
+
+            padding-left:
+                8px;
 
         }
 
@@ -179,30 +286,37 @@
         header {
 
             padding:
-                70px 20px 55px;
-
-            text-align:
-                center;
+                75px 20px 55px;
 
             background:
                 linear-gradient(
-                    180deg,
-                    rgba(232, 93, 63, 0.96),
-                    rgba(239, 111, 82, 0.92)
+                    135deg,
+                    #e85d3f,
+                    #ef7658
                 );
 
             color:
                 white;
+
+            text-align:
+                center;
 
         }
 
 
         header h1 {
 
-            margin: 0;
+            margin:
+                0;
 
             font-size:
                 38px;
+
+            font-weight:
+                800;
+
+            letter-spacing:
+                0.02em;
 
         }
 
@@ -213,10 +327,13 @@
                 12px 0 0;
 
             font-size:
-                16px;
+                15px;
+
+            font-weight:
+                400;
 
             opacity:
-                0.95;
+                0.9;
 
         }
 
@@ -225,7 +342,7 @@
            メイン
         ========================= */
 
-        .content {
+        main {
 
             max-width:
                 900px;
@@ -234,28 +351,22 @@
                 0 auto;
 
             padding:
-                55px 20px 90px;
+                70px 25px 100px;
 
         }
 
 
         /* =========================
-           戻るボタン
+           戻る
         ========================= */
 
-        .back-button {
+        .back {
 
             display:
                 inline-block;
 
             margin-bottom:
-                35px;
-
-            padding:
-                10px 18px;
-
-            background:
-                #fff1ec;
+                45px;
 
             color:
                 #e85d3f;
@@ -263,11 +374,11 @@
             text-decoration:
                 none;
 
-            border-radius:
-                9px;
+            font-size:
+                14px;
 
             font-weight:
-                bold;
+                600;
 
             transition:
                 0.2s;
@@ -275,16 +386,10 @@
         }
 
 
-        .back-button:hover {
-
-            background:
-                #e85d3f;
-
-            color:
-                white;
+        .back:hover {
 
             transform:
-                translateX(-3px);
+                translateX(-4px);
 
         }
 
@@ -293,26 +398,10 @@
            セクション
         ========================= */
 
-        .mod-section {
+        .section {
 
             margin-bottom:
-                35px;
-
-            padding:
-                35px;
-
-            background:
-                rgba(255, 255, 255, 0.94);
-
-            border:
-                1px solid #eeeeee;
-
-            border-radius:
-                18px;
-
-            box-shadow:
-                0 7px 25px
-                rgba(0, 0, 0, 0.05);
+                70px;
 
         }
 
@@ -322,142 +411,233 @@
             margin:
                 0 0 15px;
 
-            color:
-                #e85d3f;
+            padding-bottom:
+                18px;
+
+            border-bottom:
+                2px solid #eeeeee;
 
             font-size:
-                28px;
+                29px;
+
+            font-weight:
+                800;
+
+            color:
+                #222222;
 
         }
 
 
-        .section-intro {
+        .section-title::before {
+
+            content:
+                "";
+
+            display:
+                inline-block;
+
+            width:
+                5px;
+
+            height:
+                29px;
+
+            margin-right:
+                13px;
+
+            vertical-align:
+                -4px;
+
+            border-radius:
+                5px;
+
+            background:
+                #e85d3f;
+
+        }
+
+
+        .intro {
 
             margin:
-                0 0 25px;
+                0 0 35px;
 
             color:
                 #666666;
 
+            font-size:
+                15px;
+
             line-height:
-                1.9;
+                2;
 
         }
 
 
         /* =========================
-           リスト
+           MOD項目
         ========================= */
 
-        .item-list {
-
-            display:
-                flex;
-
-            flex-direction:
-                column;
-
-            gap:
-                10px;
-
-        }
-
-
-        .item {
+        .mod-item {
 
             padding:
-                14px 17px;
+                25px 0;
 
-            background:
-                #fff8f5;
-
-            border:
-                1px solid #f2e5e0;
-
-            border-radius:
-                10px;
-
-            color:
-                #555555;
-
-            line-height:
-                1.7;
-
-        }
-
-
-        .item strong {
-
-            color:
-                #444444;
-
-        }
-
-
-        /* =========================
-           カテゴリー
-        ========================= */
-
-        .category {
-
-            margin-top:
-                22px;
-
-        }
-
-
-        .category:first-child {
-
-            margin-top:
-                0;
-
-        }
-
-
-        .category-title {
-
-            margin:
-                0 0 10px;
-
-            font-size:
-                17px;
-
-            color:
-                #e85d3f;
-
-        }
-
-
-        /* =========================
-           禁止エリア
-        ========================= */
-
-        .danger {
-
-            background:
-                #fff6f3;
-
-            border:
-                1px solid #f2d6cd;
-
-        }
-
-
-        .danger .item {
-
-            background:
-                #ffffff;
-
-            border:
+            border-bottom:
                 1px solid #eeeeee;
 
         }
 
 
-        .danger-title {
+        .mod-item:last-child {
+
+            border-bottom:
+                none;
+
+        }
+
+
+        .mod-item h3 {
+
+            margin:
+                0 0 10px;
+
+            font-size:
+                18px;
+
+            font-weight:
+                700;
+
+            color:
+                #333333;
+
+        }
+
+
+        .mod-item h3 span {
+
+            display:
+                inline-block;
+
+            margin-right:
+                9px;
+
+            color:
+                #e85d3f;
+
+            font-weight:
+                800;
+
+        }
+
+
+        .mod-item p {
+
+            margin:
+                0;
+
+            color:
+                #555555;
+
+            font-size:
+                15px;
+
+            line-height:
+                2;
+
+        }
+
+
+        /* =========================
+           MOD名
+        ========================= */
+
+        .mod-name {
+
+            display:
+                inline-block;
+
+            margin:
+                4px 5px 4px 0;
+
+            padding:
+                5px 9px;
+
+            border:
+                1px solid #eeeeee;
+
+            border-radius:
+                6px;
+
+            background:
+                #fafafa;
+
+            color:
+                #444444;
+
+            font-size:
+                13px;
+
+            font-weight:
+                500;
+
+        }
+
+
+        /* =========================
+           禁止項目
+        ========================= */
+
+        .danger {
+
+            border-bottom:
+                1px solid #eeeeee;
+
+        }
+
+
+        .danger h3 span {
 
             color:
                 #d94f32;
+
+        }
+
+
+        .danger-box {
+
+            margin-top:
+                35px;
+
+            padding:
+                25px;
+
+            border-left:
+                4px solid #e85d3f;
+
+            background:
+                #fff7f4;
+
+            border-radius:
+                0 8px 8px 0;
+
+        }
+
+
+        .danger-box p {
+
+            margin:
+                0;
+
+            color:
+                #555555;
+
+            font-size:
+                14px;
+
+            line-height:
+                2;
 
         }
 
@@ -469,25 +649,36 @@
         .notice {
 
             margin-top:
-                25px;
+                35px;
 
             padding:
-                18px 20px;
+                25px;
 
             background:
-                #fff5ee;
+                #fafafa;
 
-            border-left:
-                4px solid #e85d3f;
+            border:
+                1px solid #eeeeee;
 
             border-radius:
                 8px;
 
+        }
+
+
+        .notice p {
+
+            margin:
+                0;
+
             color:
                 #666666;
 
+            font-size:
+                14px;
+
             line-height:
-                1.8;
+                2;
 
         }
 
@@ -499,22 +690,19 @@
         footer {
 
             padding:
-                30px 20px;
-
-            text-align:
-                center;
-
-            background:
-                #fafafa;
+                35px 20px;
 
             border-top:
                 1px solid #eeeeee;
+
+            text-align:
+                center;
 
             color:
                 #999999;
 
             font-size:
-                14px;
+                13px;
 
         }
 
@@ -525,10 +713,35 @@
 
         @media (max-width: 600px) {
 
+            .menu-button {
+
+                top:
+                    15px;
+
+                right:
+                    15px;
+
+                width:
+                    46px;
+
+                height:
+                    46px;
+
+            }
+
+
+            .side-menu {
+
+                width:
+                    280px;
+
+            }
+
+
             header {
 
                 padding:
-                    60px 15px 45px;
+                    65px 20px 45px;
 
             }
 
@@ -536,23 +749,15 @@
             header h1 {
 
                 font-size:
-                    28px;
+                    30px;
 
             }
 
 
-            .content {
+            main {
 
                 padding:
-                    40px 15px 60px;
-
-            }
-
-
-            .mod-section {
-
-                padding:
-                    25px 20px;
+                    50px 20px 70px;
 
             }
 
@@ -565,27 +770,40 @@
             }
 
 
-            .item {
+            .section-title::before {
 
-                font-size:
-                    14px;
+                height:
+                    24px;
+
+                width:
+                    4px;
 
             }
 
 
-            .light {
+            .mod-item h3 {
 
-                width:
-                    320px;
+                font-size:
+                    17px;
 
-                height:
-                    320px;
+            }
 
-                filter:
-                    blur(75px);
 
-                opacity:
-                    0.13;
+            .mod-item p {
+
+                font-size:
+                    14px;
+
+                line-height:
+                    1.9;
+
+            }
+
+
+            .mod-name {
+
+                font-size:
+                    12px;
 
             }
 
@@ -611,9 +829,7 @@
 <body>
 
 
-    <!-- =========================
-         背景
-    ========================= -->
+    <!-- 背景 -->
 
     <div class="background">
 
@@ -621,204 +837,356 @@
 
         <div class="light two"></div>
 
-        <div class="light three"></div>
-
     </div>
 
 
 
-    <!-- =========================
-         ヘッダー
-    ========================= -->
+    <!-- メニューボタン -->
+
+    <button
+        class="menu-button"
+        onclick="toggleMenu()"
+        aria-label="メニュー"
+    >
+        ☰
+    </button>
+
+
+
+    <!-- メニュー -->
+
+    <nav
+        class="side-menu"
+        id="sideMenu"
+    >
+
+        <h2>
+            MENU
+        </h2>
+
+
+        <a
+            href="index.html"
+            class="menu-link"
+        >
+            ホーム
+        </a>
+
+
+        <a
+            href="index.html#about"
+            class="menu-link"
+        >
+            ひろ鯖とは
+        </a>
+
+
+        <a
+            href="index.html#join"
+            class="menu-link"
+        >
+            参加方法
+        </a>
+
+
+        <a
+            href="rules.html"
+            class="menu-link"
+        >
+            規約
+        </a>
+
+
+        <a
+            href="mods.html"
+            class="menu-link"
+        >
+            使用可能MOD
+        </a>
+
+
+        <a
+            href="commands.html"
+            class="menu-link"
+        >
+            コマンド一覧
+        </a>
+
+    </nav>
+
+
+
+    <!-- ヘッダー -->
 
     <header>
 
         <h1>
-            🛠️ 使用可能クライアント・MOD
+            使用可能クライアント・MOD
         </h1>
 
         <p>
-            ひろ鯖で使用できるクライアント・MOD一覧
+            ひろ鯖で使用できるクライアント・MODについて
         </p>
 
     </header>
 
 
 
-    <!-- =========================
-         メイン
-    ========================= -->
+    <!-- メイン -->
 
-    <main class="content">
+    <main>
 
 
         <a
             href="index.html"
-            class="back-button"
+            class="back"
         >
-            ← ホームへ戻る
+            ← ホームに戻る
         </a>
 
 
 
         <!-- =========================
-             説明
+             概要
         ========================= -->
 
-        <section class="mod-section">
+        <section class="section">
 
             <h2 class="section-title">
-                🛠️ 使用可能クライアント・MOD
+                使用可能クライアント・MOD
             </h2>
 
-            <p class="section-intro">
 
-                当サーバーでは、以下のクライアント・MODを使用できます。
+            <p class="intro">
+
+                当サーバーでは、以下のクライアント・MODを
+                使用できます。
 
                 <br>
 
-                記載されていないものは、
+                記載されていないものを使用する場合は、
                 使用前に運営へ確認してください。
 
             </p>
 
-        </section>
 
 
+            <!-- 許可クライアント -->
 
-        <!-- =========================
-             許可クライアント
-        ========================= -->
+            <div class="mod-item">
 
-        <section class="mod-section">
-
-            <h2 class="section-title">
-                🖥️ 許可クライアント
-            </h2>
-
-
-            <div class="item-list">
-
-                <div class="item">
-                    <strong>Lunar Client</strong>
-                </div>
-
-                <div class="item">
-                    <strong>Badlion Client</strong>
-                </div>
-
-                <div class="item">
-                    <strong>Feather Client</strong>
-                </div>
-
-                <div class="item">
-                    <strong>LabyMod</strong>
-                </div>
-
-                <div class="item">
-                    <strong>その他、通常のMinecraftプレイを目的としたクライアント</strong>
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             許可MOD
-        ========================= -->
-
-        <section class="mod-section">
-
-            <h2 class="section-title">
-                🧩 許可MOD
-            </h2>
-
-
-
-            <div class="category">
-
-                <h3 class="category-title">
-                    ⚡ 軽量化
+                <h3>
+                    <span>01</span>
+                    許可クライアント
                 </h3>
 
-                <div class="item">
-                    Sodium / Lithium / FerriteCore / EntityCulling 等
-                </div>
+
+                <p>
+
+                    <span class="mod-name">
+                        Lunar Client
+                    </span>
+
+                    <span class="mod-name">
+                        Badlion Client
+                    </span>
+
+                    <span class="mod-name">
+                        Feather Client
+                    </span>
+
+                    <span class="mod-name">
+                        LabyMod
+                    </span>
+
+                    <br>
+
+                    その他、通常のMinecraftプレイを目的とした
+                    クライアント
+
+                </p>
 
             </div>
 
 
 
-            <div class="category">
+            <!-- 軽量化 -->
 
-                <h3 class="category-title">
-                    🏗️ 建築
+            <div class="mod-item">
+
+                <h3>
+                    <span>02</span>
+                    軽量化MOD
                 </h3>
 
-                <div class="item">
-                    Litematica / Schematica 等
-                </div>
+
+                <p>
+
+                    <span class="mod-name">
+                        Sodium
+                    </span>
+
+                    <span class="mod-name">
+                        Lithium
+                    </span>
+
+                    <span class="mod-name">
+                        FerriteCore
+                    </span>
+
+                    <span class="mod-name">
+                        EntityCulling
+                    </span>
+
+                    その他、同様の軽量化を目的としたMOD
+
+                </p>
 
             </div>
 
 
 
-            <div class="category">
+            <!-- 建築 -->
 
-                <h3 class="category-title">
-                    🎥 録画
+            <div class="mod-item">
+
+                <h3>
+                    <span>03</span>
+                    建築MOD
                 </h3>
 
-                <div class="item">
-                    Replay Mod 等
-                </div>
+
+                <p>
+
+                    <span class="mod-name">
+                        Litematica
+                    </span>
+
+                    <span class="mod-name">
+                        Schematica
+                    </span>
+
+                    等
+
+                </p>
 
             </div>
 
 
 
-            <div class="category">
+            <!-- 録画 -->
 
-                <h3 class="category-title">
-                    🌐 翻訳
+            <div class="mod-item">
+
+                <h3>
+                    <span>04</span>
+                    録画・リプレイ
                 </h3>
 
-                <div class="item">
-                    翻訳・チャット翻訳MOD
-                </div>
+
+                <p>
+
+                    <span class="mod-name">
+                        Replay Mod
+                    </span>
+
+                    等、録画やリプレイを目的としたMOD
+
+                </p>
 
             </div>
 
 
 
-            <div class="category">
+            <!-- 翻訳 -->
 
-                <h3 class="category-title">
-                    📊 HUD
+            <div class="mod-item">
+
+                <h3>
+                    <span>05</span>
+                    翻訳
                 </h3>
 
-                <div class="item">
-                    Keystrokes / CPS / FPS / Ping / 座標 / Armor Status 等
-                </div>
+
+                <p>
+
+                    翻訳・チャット翻訳を目的としたMOD
+
+                </p>
 
             </div>
 
 
 
-            <div class="category">
+            <!-- HUD -->
 
-                <h3 class="category-title">
-                    🔍 視認性
+            <div class="mod-item">
+
+                <h3>
+                    <span>06</span>
+                    HUD・情報表示
                 </h3>
 
-                <div class="item">
-                    Zoom / 明るさ調整 等
-                </div>
+
+                <p>
+
+                    <span class="mod-name">
+                        Keystrokes
+                    </span>
+
+                    <span class="mod-name">
+                        CPS
+                    </span>
+
+                    <span class="mod-name">
+                        FPS
+                    </span>
+
+                    <span class="mod-name">
+                        Ping
+                    </span>
+
+                    <span class="mod-name">
+                        座標表示
+                    </span>
+
+                    <span class="mod-name">
+                        Armor Status
+                    </span>
+
+                    等
+
+                </p>
 
             </div>
 
+
+
+            <!-- 視認性 -->
+
+            <div class="mod-item">
+
+                <h3>
+                    <span>07</span>
+                    視認性向上
+                </h3>
+
+
+                <p>
+
+                    <span class="mod-name">
+                        Zoom
+                    </span>
+
+                    <span class="mod-name">
+                        明るさ調整
+                    </span>
+
+                    等
+
+                </p>
+
+            </div>
 
         </section>
 
@@ -828,78 +1196,166 @@
              禁止
         ========================= -->
 
-        <section class="mod-section danger">
+        <section class="section danger">
 
-            <h2 class="section-title danger-title">
-                🚫 禁止
+            <h2 class="section-title">
+                使用禁止
             </h2>
 
 
-            <p class="section-intro">
+            <p class="intro">
 
-                以下の機能は、クライアント・MODを問わず禁止します。
+                以下の機能は、クライアント・MODを問わず
+                禁止します。
 
             </p>
 
 
-            <div class="item-list">
 
-                <div class="item">
-                    X-Ray・透過
-                </div>
+            <div class="mod-item">
 
-                <div class="item">
-                    自動クリック・自動攻撃
-                </div>
+                <h3>
+                    <span>01</span>
+                    不正な視認・情報取得
+                </h3>
 
-                <div class="item">
-                    自動採掘・自動建築・自動移動
-                </div>
 
-                <div class="item">
-                    プレイヤー等の位置を不正に取得・表示する機能
-                </div>
+                <p>
 
-                <div class="item">
-                    その他、通常のプレイでは得られない情報を取得する機能
-                </div>
+                    X-Ray・透過など、
+                    通常では確認できない情報を取得する機能。
 
-                <div class="item">
-                    ゲームバランスを不正に変更する機能
-                </div>
+                </p>
 
             </div>
 
 
-            <div class="notice">
 
-                ⚠️ 記載されていないクライアントやMODについては、
-                使用前に運営へ確認してください。
+            <div class="mod-item">
 
-                <br>
+                <h3>
+                    <span>02</span>
+                    自動操作
+                </h3>
 
-                サーバーの公平性や安全性を損なう機能については、
-                許可されているクライアントに含まれていても
-                使用を禁止する場合があります。
+
+                <p>
+
+                    自動クリック・自動攻撃・自動採掘・
+                    自動建築・自動移動など、
+                    プレイヤーの操作を自動化する機能。
+
+                </p>
+
+            </div>
+
+
+
+            <div class="mod-item">
+
+                <h3>
+                    <span>03</span>
+                    不正な位置情報取得
+                </h3>
+
+
+                <p>
+
+                    プレイヤーやその他の対象の位置を
+                    不正に取得・表示する機能。
+
+                </p>
+
+            </div>
+
+
+
+            <div class="danger-box">
+
+                <p>
+
+                    その他、通常のプレイでは得られない情報を
+                    不正に取得する機能や、
+                    ゲームバランスを不正に変更する機能も
+                    禁止します。
+
+                    <br><br>
+
+                    判断が難しいMODを使用する場合は、
+                    使用前に運営へ確認してください。
+
+                </p>
 
             </div>
 
         </section>
 
 
+
+        <!-- =========================
+             注意事項
+        ========================= -->
+
+        <section class="section">
+
+            <h2 class="section-title">
+                注意事項
+            </h2>
+
+
+            <div class="notice">
+
+                <p>
+
+                    許可されているクライアントやMODであっても、
+                    不正な設定や機能を使用した場合は
+                    処罰の対象となる場合があります。
+
+                    <br><br>
+
+                    また、今後のサーバー環境やゲームバランスの
+                    変更により、許可されているMODが
+                    使用禁止となる場合があります。
+
+                    <br><br>
+
+                    判断に迷った場合は、
+                    使用する前に運営へ確認してください。
+
+                </p>
+
+            </div>
+
+        </section>
+
     </main>
 
 
 
-    <!-- =========================
-         フッター
-    ========================= -->
+    <!-- フッター -->
 
     <footer>
 
         © 2026 ひろ鯖
+        <br>
+        HiroSaba Official Website
 
     </footer>
+
+
+
+    <script>
+
+        function toggleMenu() {
+
+            const menu =
+                document.getElementById("sideMenu");
+
+            menu.classList.toggle("open");
+
+        }
+
+    </script>
 
 
 </body>
