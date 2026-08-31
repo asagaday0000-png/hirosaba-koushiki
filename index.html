@@ -13,24 +13,45 @@
     <title>ひろ鯖 - 公式サイト</title>
 
 
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
     <style>
+
+        /* =========================
+           基本設定
+        ========================= */
 
         * {
             box-sizing: border-box;
         }
 
+
         html {
             scroll-behavior: smooth;
         }
+
 
         body {
 
             margin: 0;
 
             font-family:
-                Arial,
                 "Noto Sans JP",
                 sans-serif;
+
+            font-weight: 400;
+
+            letter-spacing: 0.02em;
 
             background: #ffffff;
 
@@ -49,11 +70,7 @@
 
             position: fixed;
 
-            top: 0;
-            left: 0;
-
-            width: 100%;
-            height: 100%;
+            inset: 0;
 
             z-index: -1;
 
@@ -69,27 +86,29 @@
             position: absolute;
 
             width: 500px;
+
             height: 500px;
 
             border-radius: 50%;
 
-            filter: blur(110px);
+            filter: blur(120px);
 
-            opacity: 0.14;
+            opacity: 0.10;
 
         }
 
 
         .light.one {
 
-            background: #ffb49f;
+            background: #ff987e;
 
-            top: -180px;
-            left: -150px;
+            top: -200px;
+
+            left: -180px;
 
             animation:
                 moveLight1
-                18s
+                20s
                 ease-in-out
                 infinite
                 alternate;
@@ -99,14 +118,15 @@
 
         .light.two {
 
-            background: #ffcabb;
+            background: #ffb5a0;
 
-            top: 35%;
-            right: -220px;
+            top: 40%;
+
+            right: -250px;
 
             animation:
                 moveLight2
-                21s
+                24s
                 ease-in-out
                 infinite
                 alternate;
@@ -116,14 +136,15 @@
 
         .light.three {
 
-            background: #ffe0d5;
+            background: #ffd0c2;
 
-            bottom: -250px;
+            bottom: -280px;
+
             left: 30%;
 
             animation:
                 moveLight3
-                24s
+                27s
                 ease-in-out
                 infinite
                 alternate;
@@ -138,7 +159,7 @@
             }
 
             100% {
-                transform: translate(100px, 60px);
+                transform: translate(90px, 50px);
             }
 
         }
@@ -151,7 +172,7 @@
             }
 
             100% {
-                transform: translate(-90px, -60px);
+                transform: translate(-80px, -50px);
             }
 
         }
@@ -164,7 +185,7 @@
             }
 
             100% {
-                transform: translate(80px, -60px);
+                transform: translate(70px, -50px);
             }
 
         }
@@ -179,45 +200,49 @@
             position: fixed;
 
             top: 20px;
+
             right: 20px;
 
             z-index: 1001;
 
             width: 52px;
+
             height: 52px;
 
             border: none;
 
-            border-radius: 14px;
+            border-radius: 12px;
 
             background: #e85d3f;
 
-            color: white;
+            color: #ffffff;
 
-            font-size: 25px;
+            font-size: 24px;
 
             cursor: pointer;
 
             box-shadow:
-                0 5px 18px
+                0 4px 15px
                 rgba(0, 0, 0, 0.12);
 
-            transition: 0.2s;
+            transition:
+                background 0.2s,
+                transform 0.2s;
 
         }
 
 
         .menu-button:hover {
 
-            transform: scale(1.05);
-
             background: #d94f32;
+
+            transform: translateY(-2px);
 
         }
 
 
         /* =========================
-           メニュー
+           サイドメニュー
         ========================= */
 
         .side-menu {
@@ -225,9 +250,11 @@
             position: fixed;
 
             top: 0;
+
             right: -320px;
 
             width: 300px;
+
             height: 100vh;
 
             z-index: 1000;
@@ -236,11 +263,11 @@
                 90px 25px 30px;
 
             background:
-                rgba(255, 255, 255, 0.97);
+                rgba(255, 255, 255, 0.98);
 
             box-shadow:
                 -5px 0 25px
-                rgba(0, 0, 0, 0.12);
+                rgba(0, 0, 0, 0.10);
 
             transition:
                 right 0.3s ease;
@@ -266,7 +293,10 @@
                 #e85d3f;
 
             font-size:
-                25px;
+                24px;
+
+            font-weight:
+                700;
 
         }
 
@@ -276,13 +306,13 @@
             display: block;
 
             padding:
-                14px 15px;
+                13px 15px;
 
             margin-bottom:
-                8px;
+                6px;
 
             border-radius:
-                10px;
+                9px;
 
             color:
                 #444444;
@@ -291,10 +321,15 @@
                 none;
 
             font-size:
-                16px;
+                15px;
+
+            font-weight:
+                500;
 
             transition:
-                0.2s;
+                background 0.2s,
+                color 0.2s,
+                transform 0.2s;
 
         }
 
@@ -308,7 +343,7 @@
                 #e85d3f;
 
             transform:
-                translateX(4px);
+                translateX(3px);
 
         }
 
@@ -328,12 +363,12 @@
             background:
                 linear-gradient(
                     180deg,
-                    rgba(232, 93, 63, 0.96),
-                    rgba(239, 111, 82, 0.92)
+                    #e85d3f 0%,
+                    #ed7054 100%
                 );
 
             color:
-                white;
+                #ffffff;
 
         }
 
@@ -353,7 +388,7 @@
                 block;
 
             margin:
-                0 auto 20px;
+                0 auto 22px;
 
         }
 
@@ -364,7 +399,13 @@
                 0;
 
             font-size:
-                20px;
+                19px;
+
+            font-weight:
+                500;
+
+            letter-spacing:
+                0.04em;
 
         }
 
@@ -374,6 +415,9 @@
         ========================= */
 
         .content {
+
+            width:
+                100%;
 
             max-width:
                 900px;
@@ -394,23 +438,23 @@
         .section {
 
             margin-bottom:
-                50px;
+                45px;
 
             padding:
                 35px;
 
             background:
-                rgba(255, 255, 255, 0.92);
+                rgba(255, 255, 255, 0.95);
 
             border:
                 1px solid #eeeeee;
 
             border-radius:
-                18px;
+                15px;
 
             box-shadow:
-                0 7px 25px
-                rgba(0, 0, 0, 0.05);
+                0 5px 20px
+                rgba(0, 0, 0, 0.045);
 
         }
 
@@ -424,7 +468,13 @@
                 #e85d3f;
 
             font-size:
-                30px;
+                29px;
+
+            font-weight:
+                700;
+
+            letter-spacing:
+                0.03em;
 
         }
 
@@ -438,7 +488,7 @@
                 block;
 
             width:
-                45px;
+                42px;
 
             height:
                 4px;
@@ -450,21 +500,30 @@
                 #e85d3f;
 
             border-radius:
-                10px;
+                4px;
 
         }
 
 
         .section p {
 
-            line-height:
-                2;
+            margin:
+                0;
+
+            color:
+                #555555;
 
             font-size:
                 16px;
 
-            color:
-                #555555;
+            line-height:
+                2;
+
+            font-weight:
+                400;
+
+            letter-spacing:
+                0.02em;
 
         }
 
@@ -479,13 +538,16 @@
                 20px;
 
             padding:
-                20px;
+                22px;
 
             background:
                 #fff7f3;
 
+            border:
+                1px solid #f7e5df;
+
             border-radius:
-                12px;
+                11px;
 
         }
 
@@ -493,13 +555,19 @@
         .join-title {
 
             margin:
-                0 0 10px;
+                0 0 12px !important;
 
             color:
-                #e85d3f;
+                #e85d3f !important;
+
+            font-size:
+                17px !important;
 
             font-weight:
-                bold;
+                700 !important;
+
+            line-height:
+                1.5 !important;
 
         }
 
@@ -516,22 +584,22 @@
                 space-between;
 
             gap:
-                10px;
+                12px;
 
             margin:
                 10px 0;
 
             padding:
-                12px 15px;
+                11px 13px;
 
             background:
-                white;
+                #ffffff;
 
             border:
                 1px solid #eeeeee;
 
             border-radius:
-                9px;
+                8px;
 
         }
 
@@ -543,6 +611,12 @@
 
             font-family:
                 monospace;
+
+            font-size:
+                15px;
+
+            color:
+                #333333;
 
         }
 
@@ -556,19 +630,32 @@
                 none;
 
             padding:
-                8px 12px;
+                8px 13px;
 
             background:
                 #e85d3f;
 
             color:
-                white;
+                #ffffff;
 
             border-radius:
                 7px;
 
+            font-family:
+                "Noto Sans JP",
+                sans-serif;
+
+            font-size:
+                13px;
+
+            font-weight:
+                600;
+
             cursor:
                 pointer;
+
+            transition:
+                background 0.2s;
 
         }
 
@@ -587,7 +674,7 @@
                 none;
 
             margin-top:
-                5px;
+                6px;
 
             color:
                 #e85d3f;
@@ -595,11 +682,25 @@
             font-size:
                 13px;
 
+            font-weight:
+                500;
+
+        }
+
+
+        .join-box > p:not(.join-title) {
+
+            margin:
+                12px 0 0;
+
+            font-size:
+                14px;
+
         }
 
 
         /* =========================
-           ボタン
+           通常ボタン
         ========================= */
 
         .button {
@@ -608,28 +709,32 @@
                 inline-block;
 
             margin-top:
-                15px;
+                18px;
 
             padding:
-                13px 25px;
+                12px 24px;
 
             background:
                 #e85d3f;
 
             color:
-                white;
+                #ffffff;
 
             text-decoration:
                 none;
 
             border-radius:
-                9px;
+                8px;
+
+            font-size:
+                14px;
 
             font-weight:
-                bold;
+                600;
 
             transition:
-                0.2s;
+                background 0.2s,
+                transform 0.2s;
 
         }
 
@@ -667,16 +772,20 @@
                 #999999;
 
             font-size:
-                14px;
+                13px;
+
+            font-weight:
+                400;
 
         }
 
 
         /* =========================
-           スマホ
+           スマートフォン
         ========================= */
 
         @media (max-width: 600px) {
+
 
             .menu-button {
 
@@ -740,13 +849,27 @@
                 padding:
                     25px 20px;
 
+                margin-bottom:
+                    30px;
+
             }
 
 
             h2 {
 
                 font-size:
-                    26px;
+                    25px;
+
+            }
+
+
+            .section p {
+
+                font-size:
+                    15px;
+
+                line-height:
+                    1.9;
 
             }
 
@@ -772,6 +895,10 @@
         }
 
 
+        /* =========================
+           アニメーションを控えたい環境
+        ========================= */
+
         @media (prefers-reduced-motion: reduce) {
 
             .light {
@@ -791,7 +918,9 @@
 <body>
 
 
-    <!-- 背景 -->
+    <!-- =========================
+         背景
+    ========================= -->
 
     <div class="background">
 
@@ -805,19 +934,25 @@
 
 
 
-    <!-- メニューボタン -->
+    <!-- =========================
+         メニューボタン
+    ========================= -->
 
     <button
         class="menu-button"
         onclick="toggleMenu()"
         aria-label="メニュー"
     >
+
         ☰
+
     </button>
 
 
 
-    <!-- メニュー -->
+    <!-- =========================
+         メニュー
+    ========================= -->
 
     <nav
         class="side-menu"
@@ -883,7 +1018,9 @@
 
 
 
-    <!-- ヘッダー -->
+    <!-- =========================
+         ヘッダー
+    ========================= -->
 
     <header id="home">
 
@@ -893,6 +1030,7 @@
             class="logo"
         >
 
+
         <p>
             Minecraftをみんなで楽しもう！
         </p>
@@ -901,12 +1039,16 @@
 
 
 
-    <!-- メイン -->
+    <!-- =========================
+         メイン
+    ========================= -->
 
     <main class="content">
 
 
-        <!-- ひろ鯖とは -->
+        <!-- =========================
+             ひろ鯖とは
+        ========================= -->
 
         <section
             class="section"
@@ -932,24 +1074,25 @@
 
                 <br><br>
 
-                ひろ鯖の魅力は、
-                統合版・Java版を問わず参加できること。
+                ひろ鯖では、
+                統合版・Java版を問わず参加できます。
 
                 <br>
 
-                さらに、サーバー独自の食べ物・武器・家具・
-                ブロックなど、通常のMinecraftとは
-                ひと味違った要素を楽しめます。
+                サーバー独自の食べ物・武器・家具・
+                ブロックなど、
+                普通のMinecraftとはひと味違った
+                要素も楽しめます。
 
                 <br><br>
 
-                経済システムやイベントなども用意し、
-                「また遊びたい！」と思ってもらえる
-                サーバーを目指しています。
+                さらに、経済システムやイベントなど、
+                長く遊んでも飽きにくい要素も用意しています。
 
                 <br><br>
 
-                皆さんの参加が、ひろ鯖の応援になります。
+                皆さんの参加が、
+                ひろ鯖の応援になります。
 
                 <br>
 
@@ -961,7 +1104,9 @@
 
 
 
-        <!-- 参加方法 -->
+        <!-- =========================
+             参加方法
+        ========================= -->
 
         <section
             class="section"
@@ -973,12 +1118,13 @@
             </h2>
 
 
+
             <!-- Java版 -->
 
             <div class="join-box">
 
                 <p class="join-title">
-                    ☕ Java版
+                    Java版
                 </p>
 
 
@@ -1015,7 +1161,7 @@
             <div class="join-box">
 
                 <p class="join-title">
-                    📱 統合版
+                    統合版
                 </p>
 
 
@@ -1080,11 +1226,12 @@
 
 
 
-        <!-- 規約 -->
+        <!-- =========================
+             規約
+        ========================= -->
 
         <section
             class="section"
-            id="rules"
         >
 
             <h2>
@@ -1117,11 +1264,12 @@
 
 
 
-        <!-- 使用可能MOD -->
+        <!-- =========================
+             使用可能MOD
+        ========================= -->
 
         <section
             class="section"
-            id="mods"
         >
 
             <h2>
@@ -1139,7 +1287,7 @@
 
                 使用できるMODや禁止されている
                 機能については、
-                必ず使用可能MOD一覧を確認してください。
+                使用可能MOD一覧をご確認ください。
 
             </p>
 
@@ -1155,9 +1303,13 @@
 
 
 
-        <!-- コマンド一覧 -->
+        <!-- =========================
+             コマンド
+        ========================= -->
 
-        <section class="section">
+        <section
+            class="section"
+        >
 
             <h2>
                 📖 コマンド一覧
@@ -1186,7 +1338,9 @@
 
 
 
-    <!-- フッター -->
+    <!-- =========================
+         フッター
+    ========================= -->
 
     <footer>
 
@@ -1200,7 +1354,7 @@
 
 
         /* =========================
-           メニューを開閉
+           メニュー開閉
         ========================= */
 
         function toggleMenu() {
@@ -1233,22 +1387,26 @@
 
         function copyText(text, button) {
 
-            navigator.clipboard.writeText(text);
+            navigator.clipboard
+                .writeText(text)
+                .then(function() {
 
-            const box =
-                button.closest(".join-box");
+                    const box =
+                        button.closest(".join-box");
 
-            const message =
-                box.querySelector(".copy-message");
+                    const message =
+                        box.querySelector(".copy-message");
 
-            message.style.display = "block";
+                    message.style.display = "block";
 
 
-            setTimeout(function() {
+                    setTimeout(function() {
 
-                message.style.display = "none";
+                        message.style.display = "none";
 
-            }, 2000);
+                    }, 2000);
+
+                });
 
         }
 
