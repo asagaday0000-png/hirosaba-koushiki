@@ -10,7 +10,16 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>ひろ鯖 - 規約</title>
+    <title>規約 - ひろ鯖</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
 
 
     <style>
@@ -30,15 +39,14 @@
             margin: 0;
 
             font-family:
-                Arial,
                 "Noto Sans JP",
                 sans-serif;
 
             background: #ffffff;
 
-            color: #333333;
+            color: #292929;
 
-            overflow-x: hidden;
+            letter-spacing: 0.01em;
 
         }
 
@@ -51,11 +59,7 @@
 
             position: fixed;
 
-            top: 0;
-            left: 0;
-
-            width: 100%;
-            height: 100%;
+            inset: 0;
 
             z-index: -1;
 
@@ -70,104 +74,207 @@
 
             position: absolute;
 
-            width: 500px;
-            height: 500px;
+            width: 420px;
+
+            height: 420px;
 
             border-radius: 50%;
 
-            filter: blur(110px);
+            filter: blur(130px);
 
-            opacity: 0.14;
+            opacity: 0.06;
 
         }
 
 
         .light.one {
 
-            background: #ffb49f;
+            background: #ff704f;
 
-            top: -180px;
+            top: -200px;
+
             left: -150px;
 
             animation:
-                moveLight1
-                18s
-                ease-in-out
-                infinite
-                alternate;
+                float1 18s ease-in-out infinite alternate;
 
         }
 
 
         .light.two {
 
-            background: #ffcabb;
+            background: #ff9b82;
 
-            top: 35%;
-            right: -220px;
+            right: -200px;
 
-            animation:
-                moveLight2
-                21s
-                ease-in-out
-                infinite
-                alternate;
-
-        }
-
-
-        .light.three {
-
-            background: #ffe0d5;
-
-            bottom: -250px;
-            left: 30%;
+            top: 45%;
 
             animation:
-                moveLight3
-                24s
-                ease-in-out
-                infinite
-                alternate;
+                float2 22s ease-in-out infinite alternate;
 
         }
 
 
-        @keyframes moveLight1 {
+        @keyframes float1 {
 
-            0% {
-                transform: translate(0, 0);
-            }
-
-            100% {
-                transform: translate(100px, 60px);
+            to {
+                transform:
+                    translate(80px, 50px);
             }
 
         }
 
 
-        @keyframes moveLight2 {
+        @keyframes float2 {
 
-            0% {
-                transform: translate(0, 0);
-            }
-
-            100% {
-                transform: translate(-90px, -60px);
+            to {
+                transform:
+                    translate(-70px, -40px);
             }
 
         }
 
 
-        @keyframes moveLight3 {
+        /* =========================
+           メニュー
+        ========================= */
 
-            0% {
-                transform: translate(0, 0);
-            }
+        .menu-button {
 
-            100% {
-                transform: translate(80px, -60px);
-            }
+            position: fixed;
+
+            top: 22px;
+
+            right: 22px;
+
+            z-index: 2000;
+
+            width: 50px;
+
+            height: 50px;
+
+            border: 0;
+
+            border-radius: 50%;
+
+            background: #e85d3f;
+
+            color: white;
+
+            font-size: 22px;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.12);
+
+            transition: 0.2s;
+
+        }
+
+
+        .menu-button:hover {
+
+            transform:
+                scale(1.06);
+
+            background:
+                #d94f32;
+
+        }
+
+
+        .side-menu {
+
+            position: fixed;
+
+            top: 0;
+
+            right: -330px;
+
+            width: 310px;
+
+            height: 100vh;
+
+            z-index: 1500;
+
+            padding:
+                95px 30px 30px;
+
+            background:
+                rgba(255, 255, 255, 0.98);
+
+            box-shadow:
+                -10px 0 35px
+                rgba(0, 0, 0, 0.10);
+
+            transition:
+                right 0.3s ease;
+
+        }
+
+
+        .side-menu.open {
+
+            right: 0;
+
+        }
+
+
+        .side-menu h2 {
+
+            margin:
+                0 0 30px;
+
+            font-size:
+                24px;
+
+            font-weight:
+                800;
+
+            color:
+                #222222;
+
+        }
+
+
+        .menu-link {
+
+            display:
+                block;
+
+            padding:
+                13px 5px;
+
+            border-bottom:
+                1px solid #eeeeee;
+
+            color:
+                #333333;
+
+            text-decoration:
+                none;
+
+            font-size:
+                15px;
+
+            font-weight:
+                500;
+
+            transition:
+                0.2s;
+
+        }
+
+
+        .menu-link:hover {
+
+            color:
+                #e85d3f;
+
+            padding-left:
+                8px;
 
         }
 
@@ -179,32 +286,37 @@
         header {
 
             padding:
-                70px
-                20px
-                55px;
-
-            text-align:
-                center;
+                75px 20px 55px;
 
             background:
                 linear-gradient(
-                    180deg,
-                    rgba(232, 93, 63, 0.96),
-                    rgba(239, 111, 82, 0.92)
+                    135deg,
+                    #e85d3f,
+                    #ef7658
                 );
 
             color:
                 white;
+
+            text-align:
+                center;
 
         }
 
 
         header h1 {
 
-            margin: 0;
+            margin:
+                0;
 
             font-size:
-                40px;
+                38px;
+
+            font-weight:
+                800;
+
+            letter-spacing:
+                0.02em;
 
         }
 
@@ -212,15 +324,16 @@
         header p {
 
             margin:
-                12px
-                0
-                0;
+                12px 0 0;
 
             font-size:
-                16px;
+                15px;
+
+            font-weight:
+                400;
 
             opacity:
-                0.95;
+                0.9;
 
         }
 
@@ -229,19 +342,16 @@
            メイン
         ========================= */
 
-        .content {
+        main {
 
             max-width:
                 900px;
 
             margin:
-                0
-                auto;
+                0 auto;
 
             padding:
-                55px
-                20px
-                90px;
+                70px 25px 100px;
 
         }
 
@@ -250,20 +360,13 @@
            戻るボタン
         ========================= */
 
-        .back-button {
+        .back {
 
             display:
                 inline-block;
 
             margin-bottom:
-                35px;
-
-            padding:
-                10px
-                18px;
-
-            background:
-                #fff1ec;
+                45px;
 
             color:
                 #e85d3f;
@@ -271,11 +374,11 @@
             text-decoration:
                 none;
 
-            border-radius:
-                9px;
+            font-size:
+                14px;
 
             font-weight:
-                bold;
+                600;
 
             transition:
                 0.2s;
@@ -283,91 +386,103 @@
         }
 
 
-        .back-button:hover {
-
-            background:
-                #e85d3f;
-
-            color:
-                white;
+        .back:hover {
 
             transform:
-                translateX(-3px);
+                translateX(-4px);
 
         }
 
 
         /* =========================
-           セクション
+           規約セクション
         ========================= */
 
         .rule-section {
 
             margin-bottom:
-                55px;
+                80px;
 
-            padding:
-                35px;
+        }
 
-            background:
-                rgba(255, 255, 255, 0.94);
 
-            border:
-                1px solid #eeeeee;
+        .rule-title {
 
-            border-radius:
+            margin:
+                0 0 15px;
+
+            padding-bottom:
                 18px;
 
-            box-shadow:
-                0
-                7px
-                25px
-                rgba(0, 0, 0, 0.05);
-
-        }
-
-
-        .section-title {
-
-            margin:
-                0
-                0
-                15px;
-
-            color:
-                #e85d3f;
+            border-bottom:
+                2px solid #eeeeee;
 
             font-size:
-                30px;
+                29px;
+
+            font-weight:
+                800;
+
+            color:
+                #222222;
 
         }
 
 
-        .section-intro {
+        .rule-title::before {
+
+            content:
+                "";
+
+            display:
+                inline-block;
+
+            width:
+                5px;
+
+            height:
+                29px;
+
+            margin-right:
+                13px;
+
+            vertical-align:
+                -4px;
+
+            border-radius:
+                5px;
+
+            background:
+                #e85d3f;
+
+        }
+
+
+        .intro {
 
             margin:
-                0
-                0
-                30px;
+                0 0 40px;
 
             color:
                 #666666;
 
+            font-size:
+                15px;
+
             line-height:
-                1.9;
+                2;
 
         }
 
 
         /* =========================
-           ルール項目
+           各ルール
         ========================= */
 
-        .rule-item {
+        .rule {
 
             padding:
-                20px
-                0;
+                25px 0;
 
             border-bottom:
                 1px solid #eeeeee;
@@ -375,7 +490,7 @@
         }
 
 
-        .rule-item:last-child {
+        .rule:last-child {
 
             border-bottom:
                 none;
@@ -383,65 +498,94 @@
         }
 
 
-        .rule-item h3 {
+        .rule h3 {
 
             margin:
-                0
-                0
-                10px;
-
-            color:
-                #444444;
+                0 0 12px;
 
             font-size:
                 18px;
 
+            font-weight:
+                700;
+
+            color:
+                #333333;
+
         }
 
 
-        .rule-item p {
+        .rule h3 span {
+
+            display:
+                inline-block;
+
+            margin-right:
+                9px;
+
+            color:
+                #e85d3f;
+
+            font-weight:
+                800;
+
+        }
+
+
+        .rule p {
 
             margin:
                 0;
 
             color:
-                #666666;
-
-            line-height:
-                1.9;
+                #555555;
 
             font-size:
                 15px;
+
+            line-height:
+                2;
 
         }
 
 
         /* =========================
-           注意ボックス
+           最後の注意
         ========================= */
 
         .notice {
 
             margin-top:
-                30px;
+                45px;
 
             padding:
-                20px;
-
-            background:
-                #fff5ee;
+                25px;
 
             border-left:
                 4px solid #e85d3f;
 
+            background:
+                #fff7f4;
+
             border-radius:
-                8px;
+                0 8px 8px 0;
+
+        }
+
+
+        .notice p {
+
+            margin:
+                0;
 
             color:
-                #666666;
+                #555555;
+
+            font-size:
+                14px;
 
             line-height:
-                1.8;
+                2;
 
         }
 
@@ -453,23 +597,19 @@
         footer {
 
             padding:
-                30px
-                20px;
-
-            text-align:
-                center;
-
-            background:
-                #fafafa;
+                35px 20px;
 
             border-top:
                 1px solid #eeeeee;
+
+            text-align:
+                center;
 
             color:
                 #999999;
 
             font-size:
-                14px;
+                13px;
 
         }
 
@@ -480,12 +620,35 @@
 
         @media (max-width: 600px) {
 
+            .menu-button {
+
+                top:
+                    15px;
+
+                right:
+                    15px;
+
+                width:
+                    46px;
+
+                height:
+                    46px;
+
+            }
+
+
+            .side-menu {
+
+                width:
+                    280px;
+
+            }
+
+
             header {
 
                 padding:
-                    60px
-                    15px
-                    45px;
+                    65px 20px 45px;
 
             }
 
@@ -498,34 +661,34 @@
             }
 
 
-            .content {
+            main {
 
                 padding:
-                    40px
-                    15px
-                    60px;
+                    50px 20px 70px;
 
             }
 
 
-            .rule-section {
-
-                padding:
-                    25px
-                    20px;
-
-            }
-
-
-            .section-title {
+            .rule-title {
 
                 font-size:
-                    26px;
+                    24px;
 
             }
 
 
-            .rule-item h3 {
+            .rule-title::before {
+
+                height:
+                    24px;
+
+                width:
+                    4px;
+
+            }
+
+
+            .rule h3 {
 
                 font-size:
                     17px;
@@ -533,27 +696,13 @@
             }
 
 
-            .rule-item p {
+            .rule p {
 
                 font-size:
                     14px;
 
-            }
-
-
-            .light {
-
-                width:
-                    320px;
-
-                height:
-                    320px;
-
-                filter:
-                    blur(75px);
-
-                opacity:
-                    0.13;
+                line-height:
+                    1.9;
 
             }
 
@@ -579,9 +728,7 @@
 <body>
 
 
-    <!-- =========================
-         背景
-    ========================= -->
+    <!-- 背景 -->
 
     <div class="background">
 
@@ -589,42 +736,111 @@
 
         <div class="light two"></div>
 
-        <div class="light three"></div>
-
     </div>
 
 
 
-    <!-- =========================
-         ヘッダー
-    ========================= -->
+    <!-- メニューボタン -->
+
+    <button
+        class="menu-button"
+        onclick="toggleMenu()"
+        aria-label="メニュー"
+    >
+        ☰
+    </button>
+
+
+
+    <!-- メニュー -->
+
+    <nav
+        class="side-menu"
+        id="sideMenu"
+    >
+
+        <h2>
+            MENU
+        </h2>
+
+
+        <a
+            href="index.html"
+            class="menu-link"
+        >
+            ホーム
+        </a>
+
+
+        <a
+            href="index.html#about"
+            class="menu-link"
+        >
+            ひろ鯖とは
+        </a>
+
+
+        <a
+            href="index.html#join"
+            class="menu-link"
+        >
+            参加方法
+        </a>
+
+
+        <a
+            href="rules.html"
+            class="menu-link"
+        >
+            規約
+        </a>
+
+
+        <a
+            href="mods.html"
+            class="menu-link"
+        >
+            使用可能MOD
+        </a>
+
+
+        <a
+            href="commands.html"
+            class="menu-link"
+        >
+            コマンド一覧
+        </a>
+
+    </nav>
+
+
+
+    <!-- ヘッダー -->
 
     <header>
 
         <h1>
-            📜 ひろ鯖 規約
+            サーバー規約
         </h1>
 
         <p>
-            みんなが安心して楽しく遊ぶためのルール
+            ひろ鯖をみんなで楽しく利用するためのルール
         </p>
 
     </header>
 
 
 
-    <!-- =========================
-         メイン
-    ========================= -->
+    <!-- メイン -->
 
-    <main class="content">
+    <main>
 
 
         <a
             href="index.html"
-            class="back-button"
+            class="back"
         >
-            ← ホームへ戻る
+            ← ホームに戻る
         </a>
 
 
@@ -635,13 +851,16 @@
 
         <section class="rule-section">
 
-            <h2 class="section-title">
-                📜 サーバールール
+            <h2 class="rule-title">
+                サーバールール
             </h2>
 
-            <p class="section-intro">
 
-                本規約は、当サーバーを利用するすべての方に適用されます。
+            <p class="intro">
+
+                本規約は、当サーバーを利用するすべての方に
+                適用されます。<br>
+
                 年齢・性別・プレイ歴等にかかわらず、
                 すべての利用者が遵守してください。
 
@@ -649,26 +868,20 @@
 
 
 
-            <div class="rule-item">
+            <div class="rule">
 
                 <h3>
-                    1. 個人情報・プライバシーについて
+                    <span>01</span>
+                    個人情報・プライバシーについて
                 </h3>
 
                 <p>
 
-                    他者の個人情報を公開・収集・特定しようとする行為を
-                    一切禁止します。
-
-                    <br>
-
+                    他者の個人情報を公開・収集・特定しようとする
+                    行為を一切禁止します。
                     本人の同意なく、氏名・住所・学校・連絡先・
                     SNSアカウント等を公開する行為も禁止対象です。
-
-                    <br>
-
-                    悪質な場合は、即時BANを含む
-                    厳正な対処を行います。
+                    悪質な場合は、即時BANを含む厳正な対処を行います。
 
                 </p>
 
@@ -676,23 +889,19 @@
 
 
 
-            <div class="rule-item">
+            <div class="rule">
 
                 <h3>
-                    2. サーバーへの過度な負荷について
+                    <span>02</span>
+                    サーバーへの過度な負荷について
                 </h3>
 
                 <p>
 
-                    サーバーの動作に著しい負荷を与える行為を禁止します。
-
-                    <br>
-
-                    意図的な大量設置・大量処理・
-                    サーバーの動作を妨害する行為等が対象となります。
-
-                    <br>
-
+                    サーバーの動作に著しい負荷を与える行為を
+                    禁止します。
+                    意図的な大量設置・大量処理・サーバーの動作を
+                    妨害する行為等が対象となります。
                     悪質な場合はBAN等の処分を行います。
 
                 </p>
@@ -701,21 +910,19 @@
 
 
 
-            <div class="rule-item">
+            <div class="rule">
 
                 <h3>
-                    3. 誹謗中傷・迷惑行為について
+                    <span>03</span>
+                    誹謗中傷・迷惑行為について
                 </h3>
 
                 <p>
 
-                    他者への誹謗中傷、嫌がらせ、
-                    過度な煽り行為を禁止します。
-
-                    <br>
-
-                    また、当サーバーの利用者に対する
-                    過度な他サーバーへの勧誘・宣伝も禁止します。
+                    他者への誹謗中傷、嫌がらせ、過度な煽り行為を
+                    禁止します。
+                    また、当サーバーの利用者に対する過度な
+                    他サーバーへの勧誘・宣伝も禁止します。
 
                 </p>
 
@@ -723,16 +930,18 @@
 
 
 
-            <div class="rule-item">
+            <div class="rule">
 
                 <h3>
-                    4. すべての利用者への配慮
+                    <span>04</span>
+                    すべての利用者への配慮
                 </h3>
 
                 <p>
 
-                    年齢・性別・プレイスタイル・技術レベル等にかかわらず、
-                    互いに尊重し、節度を持って利用してください。
+                    年齢・性別・プレイスタイル・技術レベル等に
+                    かかわらず、互いに尊重し、節度を持って
+                    利用してください。
 
                 </p>
 
@@ -740,27 +949,25 @@
 
 
 
-            <div class="rule-item">
+            <div class="rule">
 
                 <h3>
-                    5. ボイスチャットについて
+                    <span>05</span>
+                    ボイスチャットについて
                 </h3>
 
                 <p>
 
                     トラブル防止および安全面への配慮から、
-                    当サーバー内にボイスチャットチャンネルは設置していません。
+                    当サーバー内にボイスチャットチャンネルは
+                    設置していません。
+                    なお、必要に応じて専用のボイスチャット
+                    サーバーを利用できます。
 
-                    <br>
-
-                    なお、必要に応じて専用のボイスチャットサーバーを利用できます。
-
-                    <br>
+                    <br><br>
 
                     また、本人が望んでいないにもかかわらず、
                     通話への参加を強要する行為を禁止します。
-
-                    <br>
 
                     （ボイスチャット専用公式サーバー有）
 
@@ -770,21 +977,22 @@
 
 
 
-            <div class="rule-item">
+            <div class="rule">
 
                 <h3>
-                    6. 暴言・不適切な発言について
+                    <span>06</span>
+                    暴言・不適切な発言について
                 </h3>
 
                 <p>
 
                     過度な暴言、性的な発言・下ネタ、
-                    その他コミュニティの雰囲気を著しく損なう発言を禁止します。
-
-                    <br>
+                    その他コミュニティの雰囲気を著しく損なう
+                    発言を禁止します。
 
                     運営が不適切と判断した場合、
-                    警告・ミュート・BAN等の処分を行う場合があります。
+                    警告・ミュート・BAN等の処分を
+                    行う場合があります。
 
                 </p>
 
@@ -792,10 +1000,11 @@
 
 
 
-            <div class="rule-item">
+            <div class="rule">
 
                 <h3>
-                    7. ネットリテラシーについて
+                    <span>07</span>
+                    ネットリテラシーについて
                 </h3>
 
                 <p>
@@ -803,10 +1012,9 @@
                     インターネット上での一般的なマナーと
                     ルールを遵守してください。
 
-                    <br>
-
-                    自身と異なる意見や価値観を持つ利用者に対しても、
-                    相互に尊重する姿勢を心がけてください。
+                    自身と異なる意見や価値観を持つ利用者に
+                    対しても、相互に尊重する姿勢を
+                    心がけてください。
 
                 </p>
 
@@ -814,10 +1022,11 @@
 
 
 
-            <div class="rule-item">
+            <div class="rule">
 
                 <h3>
-                    8. 外部で発生したトラブルについて
+                    <span>08</span>
+                    外部で発生したトラブルについて
                 </h3>
 
                 <p>
@@ -826,7 +1035,7 @@
                     個人間のDM等）で発生したトラブルについて、
                     原則として運営は関与・責任を負いません。
 
-                    <br>
+                    <br><br>
 
                     ただし、当サーバー内に影響を及ぼす行為や、
                     当サーバーの利用規約に違反する行為については、
@@ -838,18 +1047,20 @@
 
 
 
-            <div class="rule-item">
+            <div class="rule">
 
                 <h3>
-                    9. 運営について
+                    <span>09</span>
+                    運営について
                 </h3>
 
                 <p>
 
                     本規約に明記されていない行為であっても、
-                    サーバーの運営・安全性・他の利用者に重大な影響を
-                    及ぼすと運営が判断した場合、
-                    必要に応じて警告・制限・BAN等の措置を行う場合があります。
+                    サーバーの運営・安全性・他の利用者に
+                    重大な影響を及ぼすと運営が判断した場合、
+                    必要に応じて警告・制限・BAN等の措置を
+                    行う場合があります。
 
                 </p>
 
@@ -857,10 +1068,11 @@
 
 
 
-            <div class="rule-item">
+            <div class="rule">
 
                 <h3>
-                    10. 宣伝について
+                    <span>10</span>
+                    宣伝について
                 </h3>
 
                 <p>
@@ -870,7 +1082,7 @@
                     当サーバー内または関連コミュニティにおいて
                     宣伝・勧誘・共有する行為を禁止します。
 
-                    <br>
+                    <br><br>
 
                     また、処罰対象となる場合もございます。
 
@@ -882,18 +1094,21 @@
 
             <div class="notice">
 
-                📌 規約の内容を確認・理解した上でご参加ください。
+                <p>
 
-                <br>
+                    規約の内容を確認・理解した上で
+                    ご参加ください。
 
-                規約を確認していなかったことを理由とした
-                違反行為の免責は認められません。
+                    規約を確認していなかったことを理由とした
+                    違反行為の免責は認められません。
 
-                <br><br>
+                    <br><br>
 
-                すべての利用者が安心して快適に利用できる
-                コミュニティの維持に、
-                ご理解とご協力をお願いいたします。
+                    すべての利用者が安心して快適に利用できる
+                    コミュニティの維持に、
+                    ご理解とご協力をお願いいたします。
+
+                </p>
 
             </div>
 
@@ -907,16 +1122,15 @@
 
         <section class="rule-section">
 
-            <h2 class="section-title">
-                🎮 ゲームルール
+            <h2 class="rule-title">
+                ゲームルール
             </h2>
 
-            <p class="section-intro">
+
+            <p class="intro">
 
                 本規約は、Minecraftゲーム内における
-                ルールを定めたものです。
-
-                <br>
+                ルールを定めたものです。<br>
 
                 すべての利用者は以下の規則を遵守してください。
 
@@ -924,10 +1138,11 @@
 
 
 
-            <div class="rule-item">
+            <div class="rule">
 
                 <h3>
-                    1. 窃盗・建築物の破壊について
+                    <span>01</span>
+                    窃盗・建築物の破壊について
                 </h3>
 
                 <p>
@@ -935,12 +1150,10 @@
                     他の利用者が所有・管理するアイテムや資産を、
                     本人の許可なく取得する行為を禁止します。
 
-                    <br>
+                    また、他者の建築物・設備・土地等を
+                    無断で破壊、改変する行為も禁止します。
 
-                    また、他者の建築物・設備・土地等を無断で
-                    破壊、改変する行為も禁止します。
-
-                    <br>
+                    <br><br>
 
                     違反した場合、警告・アイテムの返還・
                     ロールバック・BAN等の処分を行う場合があります。
@@ -951,26 +1164,26 @@
 
 
 
-            <div class="rule-item">
+            <div class="rule">
 
                 <h3>
-                    2. PvP・プレイヤー間の争いについて
+                    <span>02</span>
+                    PvP・プレイヤー間の争いについて
                 </h3>
 
                 <p>
 
-                    相手の同意なくプレイヤーを攻撃・殺害する行為を禁止します。
-
-                    <br>
+                    相手の同意なくプレイヤーを攻撃・殺害する行為を
+                    禁止します。
 
                     また、プレイヤー同士や町・勢力同士による
                     無断の抗争・戦闘行為も禁止します。
 
-                    <br>
+                    <br><br>
 
                     PvPや町同士の争いを行う場合は、
-                    関係するプレイヤー・勢力間で
-                    事前に合意を得てください。
+                    関係するプレイヤー・勢力間で事前に
+                    合意を得てください。
 
                 </p>
 
@@ -978,10 +1191,11 @@
 
 
 
-            <div class="rule-item">
+            <div class="rule">
 
                 <h3>
-                    3. トラブルへの対応について
+                    <span>03</span>
+                    トラブルへの対応について
                 </h3>
 
                 <p>
@@ -990,12 +1204,10 @@
                     原則としてサーバー内の警察組織・
                     指定された対応組織が対処します。
 
-                    <br>
+                    <br><br>
 
                     利用者同士での報復行為や、
                     問題をさらに拡大させる行為は控えてください。
-
-                    <br>
 
                     必要に応じて、運営へ報告してください。
 
@@ -1005,10 +1217,11 @@
 
 
 
-            <div class="rule-item">
+            <div class="rule">
 
                 <h3>
-                    4. チート・不正クライアントについて
+                    <span>04</span>
+                    チート・不正クライアントについて
                 </h3>
 
                 <p>
@@ -1017,7 +1230,7 @@
                     その他ゲーム内で不正な優位性を得ることを
                     目的としたツールの使用を一切禁止します。
 
-                    <br>
+                    <br><br>
 
                     違反が確認された場合、
                     原則として即時BANを含む
@@ -1029,10 +1242,11 @@
 
 
 
-            <div class="rule-item">
+            <div class="rule">
 
                 <h3>
-                    5. クライアントMODについて
+                    <span>05</span>
+                    クライアントMODについて
                 </h3>
 
                 <p>
@@ -1040,16 +1254,16 @@
                     クライアントMODの使用については、
                     サーバーが許可・指定したものに限ります。
 
-                    <br>
+                    <br><br>
 
                     許可されていないMODについては、
-                    ゲームバランスやサーバーの安全性への影響を考慮し、
-                    使用を禁止する場合があります。
+                    ゲームバランスやサーバーの安全性への影響を
+                    考慮し、使用を禁止する場合があります。
 
                     <br><br>
 
                     ※使用可能なMODについては、
-                    別途「許可MOD一覧」を確認してください。
+                    別途「使用可能MOD一覧」を確認してください。
 
                 </p>
 
@@ -1057,23 +1271,25 @@
 
 
 
-            <div class="rule-item">
+            <div class="rule">
 
                 <h3>
-                    6. その他の荒らし行為について
+                    <span>06</span>
+                    その他の荒らし行為について
                 </h3>
 
                 <p>
 
                     放火、爆破、意図的な地形破壊、
                     大量のブロック設置・破壊、
-                    その他サーバーや他の利用者に損害を与える行為を禁止します。
+                    その他サーバーや他の利用者に
+                    損害を与える行為を禁止します。
 
-                    <br>
+                    <br><br>
 
-                    行為の内容・被害状況・故意性等を総合的に判断し、
-                    警告、修復、ロールバック、利用制限、BAN等の
-                    処分を行う場合があります。
+                    行為の内容・被害状況・故意性等を
+                    総合的に判断し、警告、修復、ロールバック、
+                    利用制限、BAN等の処分を行う場合があります。
 
                 </p>
 
@@ -1083,40 +1299,59 @@
 
             <div class="notice">
 
-                ゲーム内における行為については、
-                本規約だけでなく、サーバー全体のルールも適用されます。
+                <p>
 
-                <br><br>
+                    ゲーム内における行為については、
+                    本規約だけでなく、
+                    サーバー全体のルールも適用されます。
 
-                本規約に明記されていない行為であっても、
-                他の利用者やサーバー環境に重大な損害を与えると
-                運営が判断した場合、
-                必要に応じて適切な措置を行う場合があります。
+                    <br><br>
 
-                <br><br>
+                    本規約に明記されていない行為であっても、
+                    他の利用者やサーバー環境に重大な損害を
+                    与えると運営が判断した場合、
+                    必要に応じて適切な措置を行う場合があります。
 
-                すべての利用者が公平かつ快適にゲームを楽しめる
-                環境を維持するため、
-                ご理解とご協力をお願いいたします。
+                    <br><br>
+
+                    すべての利用者が公平かつ快適にゲームを
+                    楽しめる環境を維持するため、
+                    ご理解とご協力をお願いいたします。
+
+                </p>
 
             </div>
 
         </section>
 
-
     </main>
 
 
 
-    <!-- =========================
-         フッター
-    ========================= -->
+    <!-- フッター -->
 
     <footer>
 
         © 2026 ひろ鯖
+        <br>
+        HiroSaba Official Website
 
     </footer>
+
+
+
+    <script>
+
+        function toggleMenu() {
+
+            const menu =
+                document.getElementById("sideMenu");
+
+            menu.classList.toggle("open");
+
+        }
+
+    </script>
 
 
 </body>
