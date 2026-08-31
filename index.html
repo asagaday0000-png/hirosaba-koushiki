@@ -10,26 +10,19 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>ひろ鯖 - 公式サイト</title>
-
-
-    <!-- Google Fonts -->
+    <title>ひろ鯖 - Minecraft Server</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet"
     >
 
 
     <style>
-
-        /* =========================
-           基本設定
-        ========================= */
 
         * {
             box-sizing: border-box;
@@ -49,15 +42,11 @@
                 "Noto Sans JP",
                 sans-serif;
 
-            font-weight: 400;
-
-            letter-spacing: 0.02em;
-
             background: #ffffff;
 
-            color: #333333;
+            color: #292929;
 
-            overflow-x: hidden;
+            letter-spacing: 0.01em;
 
         }
 
@@ -76,7 +65,8 @@
 
             overflow: hidden;
 
-            background: #ffffff;
+            background:
+                #ffffff;
 
         }
 
@@ -85,165 +75,145 @@
 
             position: absolute;
 
-            width: 500px;
+            width: 420px;
 
-            height: 500px;
+            height: 420px;
 
             border-radius: 50%;
 
-            filter: blur(120px);
+            filter: blur(130px);
 
-            opacity: 0.10;
+            opacity: 0.07;
 
         }
 
 
         .light.one {
 
-            background: #ff987e;
+            background: #ff704f;
 
             top: -200px;
 
-            left: -180px;
+            left: -150px;
 
             animation:
-                moveLight1
-                20s
-                ease-in-out
-                infinite
-                alternate;
+                float1 18s ease-in-out infinite alternate;
 
         }
 
 
         .light.two {
 
-            background: #ffb5a0;
+            background: #ff9b82;
 
-            top: 40%;
+            right: -200px;
 
-            right: -250px;
+            top: 45%;
 
             animation:
-                moveLight2
-                24s
-                ease-in-out
-                infinite
-                alternate;
+                float2 22s ease-in-out infinite alternate;
 
         }
 
 
         .light.three {
 
-            background: #ffd0c2;
+            background: #ffc2b0;
 
-            bottom: -280px;
+            bottom: -250px;
 
-            left: 30%;
+            left: 35%;
 
             animation:
-                moveLight3
-                27s
-                ease-in-out
-                infinite
-                alternate;
+                float3 25s ease-in-out infinite alternate;
 
         }
 
 
-        @keyframes moveLight1 {
+        @keyframes float1 {
 
-            0% {
-                transform: translate(0, 0);
-            }
-
-            100% {
-                transform: translate(90px, 50px);
+            to {
+                transform:
+                    translate(80px, 50px);
             }
 
         }
 
 
-        @keyframes moveLight2 {
+        @keyframes float2 {
 
-            0% {
-                transform: translate(0, 0);
-            }
-
-            100% {
-                transform: translate(-80px, -50px);
+            to {
+                transform:
+                    translate(-70px, -40px);
             }
 
         }
 
 
-        @keyframes moveLight3 {
+        @keyframes float3 {
 
-            0% {
-                transform: translate(0, 0);
-            }
-
-            100% {
-                transform: translate(70px, -50px);
+            to {
+                transform:
+                    translate(60px, -50px);
             }
 
         }
 
 
         /* =========================
-           メニューボタン
+           メニュー
         ========================= */
 
         .menu-button {
 
             position: fixed;
 
-            top: 20px;
+            top: 22px;
 
-            right: 20px;
+            right: 22px;
 
-            z-index: 1001;
+            z-index: 2000;
 
-            width: 52px;
+            width: 50px;
 
-            height: 52px;
+            height: 50px;
 
-            border: none;
+            border: 0;
 
-            border-radius: 12px;
+            border-radius: 50%;
 
-            background: #e85d3f;
+            background:
+                #e85d3f;
 
-            color: #ffffff;
+            color:
+                white;
 
-            font-size: 24px;
+            font-size:
+                22px;
 
-            cursor: pointer;
+            cursor:
+                pointer;
 
             box-shadow:
-                0 4px 15px
-                rgba(0, 0, 0, 0.12);
+                0 5px 20px
+                rgba(0,0,0,0.12);
 
             transition:
-                background 0.2s,
-                transform 0.2s;
+                0.2s;
 
         }
 
 
         .menu-button:hover {
 
-            background: #d94f32;
+            transform:
+                scale(1.06);
 
-            transform: translateY(-2px);
+            background:
+                #d94f32;
 
         }
 
-
-        /* =========================
-           サイドメニュー
-        ========================= */
 
         .side-menu {
 
@@ -251,28 +221,26 @@
 
             top: 0;
 
-            right: -320px;
+            right: -330px;
 
-            width: 300px;
+            width: 310px;
 
             height: 100vh;
 
-            z-index: 1000;
+            z-index: 1500;
 
             padding:
-                90px 25px 30px;
+                95px 30px 30px;
 
             background:
-                rgba(255, 255, 255, 0.98);
+                rgba(255,255,255,0.98);
 
             box-shadow:
-                -5px 0 25px
-                rgba(0, 0, 0, 0.10);
+                -10px 0 35px
+                rgba(0,0,0,0.10);
 
             transition:
                 right 0.3s ease;
-
-            overflow-y: auto;
 
         }
 
@@ -287,35 +255,36 @@
         .side-menu h2 {
 
             margin:
-                0 0 25px;
-
-            color:
-                #e85d3f;
+                0 0 30px;
 
             font-size:
                 24px;
 
             font-weight:
-                700;
+                800;
+
+            color:
+                #222222;
 
         }
 
 
         .menu-link {
 
-            display: block;
+            display:
+                block;
 
             padding:
-                13px 15px;
+                13px 5px;
 
-            margin-bottom:
-                6px;
+            margin:
+                0;
 
-            border-radius:
-                9px;
+            border-bottom:
+                1px solid #eeeeee;
 
             color:
-                #444444;
+                #333333;
 
             text-decoration:
                 none;
@@ -327,23 +296,19 @@
                 500;
 
             transition:
-                background 0.2s,
                 color 0.2s,
-                transform 0.2s;
+                padding-left 0.2s;
 
         }
 
 
         .menu-link:hover {
 
-            background:
-                #fff1ec;
-
             color:
                 #e85d3f;
 
-            transform:
-                translateX(3px);
+            padding-left:
+                8px;
 
         }
 
@@ -354,21 +319,36 @@
 
         header {
 
-            padding:
-                70px 20px 55px;
+            min-height:
+                470px;
 
-            text-align:
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            justify-content:
                 center;
+
+            align-items:
+                center;
+
+            padding:
+                80px 20px 70px;
 
             background:
                 linear-gradient(
-                    180deg,
-                    #e85d3f 0%,
-                    #ed7054 100%
+                    135deg,
+                    #e85d3f,
+                    #ef7658
                 );
 
             color:
-                #ffffff;
+                white;
+
+            text-align:
+                center;
 
         }
 
@@ -379,16 +359,13 @@
                 350px;
 
             max-width:
-                85%;
+                85vw;
 
             height:
                 auto;
 
-            display:
-                block;
-
             margin:
-                0 auto 22px;
+                0 0 25px;
 
         }
 
@@ -399,13 +376,13 @@
                 0;
 
             font-size:
-                19px;
+                18px;
 
             font-weight:
                 500;
 
             letter-spacing:
-                0.04em;
+                0.08em;
 
         }
 
@@ -414,10 +391,7 @@
            メイン
         ========================= */
 
-        .content {
-
-            width:
-                100%;
+        main {
 
             max-width:
                 900px;
@@ -426,7 +400,7 @@
                 0 auto;
 
             padding:
-                65px 20px 90px;
+                80px 25px 100px;
 
         }
 
@@ -437,70 +411,74 @@
 
         .section {
 
-            margin-bottom:
-                45px;
-
             padding:
-                35px;
-
-            background:
-                rgba(255, 255, 255, 0.95);
-
-            border:
-                1px solid #eeeeee;
-
-            border-radius:
-                15px;
-
-            box-shadow:
-                0 5px 20px
-                rgba(0, 0, 0, 0.045);
-
-        }
-
-
-        h2 {
+                0 0 65px;
 
             margin:
-                0 0 25px;
+                0 0 65px;
 
-            color:
-                #e85d3f;
-
-            font-size:
-                29px;
-
-            font-weight:
-                700;
-
-            letter-spacing:
-                0.03em;
+            border-bottom:
+                1px solid #eeeeee;
 
         }
 
 
-        h2::after {
+        .section:last-child {
+
+            border-bottom:
+                none;
+
+        }
+
+
+        .section h2 {
+
+            margin:
+                0 0 28px;
+
+            font-size:
+                30px;
+
+            line-height:
+                1.4;
+
+            font-weight:
+                800;
+
+            color:
+                #222222;
+
+            letter-spacing:
+                -0.01em;
+
+        }
+
+
+        .section h2::before {
 
             content:
                 "";
 
             display:
-                block;
+                inline-block;
 
             width:
-                42px;
+                5px;
 
             height:
-                4px;
+                30px;
 
-            margin-top:
-                10px;
+            margin:
+                0 14px 0 0;
+
+            vertical-align:
+                -4px;
+
+            border-radius:
+                5px;
 
             background:
                 #e85d3f;
-
-            border-radius:
-                4px;
 
         }
 
@@ -510,20 +488,17 @@
             margin:
                 0;
 
-            color:
-                #555555;
-
             font-size:
                 16px;
 
             line-height:
-                2;
+                2.1;
+
+            color:
+                #555555;
 
             font-weight:
                 400;
-
-            letter-spacing:
-                0.02em;
 
         }
 
@@ -532,42 +507,46 @@
            参加方法
         ========================= */
 
-        .join-box {
+        .join-list {
 
             margin-top:
-                20px;
-
-            padding:
-                22px;
-
-            background:
-                #fff7f3;
-
-            border:
-                1px solid #f7e5df;
-
-            border-radius:
-                11px;
+                35px;
 
         }
 
 
-        .join-title {
+        .join-item {
+
+            padding:
+                25px 0;
+
+            border-top:
+                1px solid #eeeeee;
+
+        }
+
+
+        .join-item:first-child {
+
+            border-top:
+                none;
+
+        }
+
+
+        .join-item h3 {
 
             margin:
-                0 0 12px !important;
-
-            color:
-                #e85d3f !important;
+                0 0 15px;
 
             font-size:
-                17px !important;
+                19px;
 
             font-weight:
-                700 !important;
+                700;
 
-            line-height:
-                1.5 !important;
+            color:
+                #333333;
 
         }
 
@@ -580,66 +559,63 @@
             align-items:
                 center;
 
-            justify-content:
-                space-between;
-
             gap:
                 12px;
 
-            margin:
-                10px 0;
+            max-width:
+                600px;
 
             padding:
-                11px 13px;
-
-            background:
-                #ffffff;
+                10px 12px;
 
             border:
-                1px solid #eeeeee;
+                1px solid #e8e8e8;
 
             border-radius:
                 8px;
+
+            background:
+                #fafafa;
 
         }
 
 
         .address-text {
 
-            word-break:
-                break-all;
+            flex:
+                1;
 
             font-family:
                 monospace;
 
             font-size:
-                15px;
+                14px;
 
             color:
                 #333333;
+
+            word-break:
+                break-all;
 
         }
 
 
         .copy-button {
 
-            flex-shrink:
-                0;
-
             border:
                 none;
 
+            border-radius:
+                7px;
+
             padding:
-                8px 13px;
+                8px 15px;
 
             background:
                 #e85d3f;
 
             color:
-                #ffffff;
-
-            border-radius:
-                7px;
+                white;
 
             font-family:
                 "Noto Sans JP",
@@ -655,7 +631,7 @@
                 pointer;
 
             transition:
-                background 0.2s;
+                0.2s;
 
         }
 
@@ -674,21 +650,18 @@
                 none;
 
             margin-top:
-                6px;
-
-            color:
-                #e85d3f;
+                7px;
 
             font-size:
                 13px;
 
-            font-weight:
-                500;
+            color:
+                #e85d3f;
 
         }
 
 
-        .join-box > p:not(.join-title) {
+        .port {
 
             margin:
                 12px 0 0;
@@ -696,35 +669,58 @@
             font-size:
                 14px;
 
+            color:
+                #666666;
+
+        }
+
+
+        .friend-note {
+
+            margin:
+                18px 0 10px;
+
+            font-size:
+                14px;
+
+            color:
+                #555555;
+
         }
 
 
         /* =========================
-           通常ボタン
+           ページリンク
         ========================= */
 
-        .button {
+        .page-link {
 
             display:
-                inline-block;
+                inline-flex;
+
+            align-items:
+                center;
+
+            gap:
+                8px;
 
             margin-top:
-                18px;
+                25px;
 
             padding:
-                12px 24px;
+                11px 18px;
 
-            background:
-                #e85d3f;
+            border:
+                1px solid #e85d3f;
+
+            border-radius:
+                7px;
 
             color:
-                #ffffff;
+                #e85d3f;
 
             text-decoration:
                 none;
-
-            border-radius:
-                8px;
 
             font-size:
                 14px;
@@ -733,19 +729,18 @@
                 600;
 
             transition:
-                background 0.2s,
-                transform 0.2s;
+                0.2s;
 
         }
 
 
-        .button:hover {
+        .page-link:hover {
 
             background:
-                #d94f32;
+                #e85d3f;
 
-            transform:
-                translateY(-2px);
+            color:
+                white;
 
         }
 
@@ -757,16 +752,13 @@
         footer {
 
             padding:
-                30px 20px;
-
-            text-align:
-                center;
-
-            background:
-                #fafafa;
+                35px 20px;
 
             border-top:
                 1px solid #eeeeee;
+
+            text-align:
+                center;
 
             color:
                 #999999;
@@ -774,14 +766,11 @@
             font-size:
                 13px;
 
-            font-weight:
-                400;
-
         }
 
 
         /* =========================
-           スマートフォン
+           スマホ
         ========================= */
 
         @media (max-width: 600px) {
@@ -796,10 +785,10 @@
                     15px;
 
                 width:
-                    48px;
+                    46px;
 
                 height:
-                    48px;
+                    46px;
 
             }
 
@@ -814,8 +803,11 @@
 
             header {
 
+                min-height:
+                    400px;
+
                 padding:
-                    65px 15px 45px;
+                    70px 20px;
 
             }
 
@@ -831,34 +823,48 @@
             header p {
 
                 font-size:
-                    16px;
+                    15px;
 
             }
 
 
-            .content {
+            main {
 
                 padding:
-                    40px 15px 60px;
+                    55px 20px 70px;
 
             }
 
 
             .section {
 
-                padding:
-                    25px 20px;
+                padding-bottom:
+                    50px;
 
                 margin-bottom:
-                    30px;
+                    50px;
 
             }
 
 
-            h2 {
+            .section h2 {
 
                 font-size:
                     25px;
+
+            }
+
+
+            .section h2::before {
+
+                height:
+                    25px;
+
+                width:
+                    4px;
+
+                margin-right:
+                    11px;
 
             }
 
@@ -869,7 +875,7 @@
                     15px;
 
                 line-height:
-                    1.9;
+                    2;
 
             }
 
@@ -895,10 +901,6 @@
         }
 
 
-        /* =========================
-           アニメーションを控えたい環境
-        ========================= */
-
         @media (prefers-reduced-motion: reduce) {
 
             .light {
@@ -918,9 +920,7 @@
 <body>
 
 
-    <!-- =========================
-         背景
-    ========================= -->
+    <!-- 背景 -->
 
     <div class="background">
 
@@ -934,25 +934,19 @@
 
 
 
-    <!-- =========================
-         メニューボタン
-    ========================= -->
+    <!-- メニューボタン -->
 
     <button
         class="menu-button"
         onclick="toggleMenu()"
         aria-label="メニュー"
     >
-
         ☰
-
     </button>
 
 
 
-    <!-- =========================
-         メニュー
-    ========================= -->
+    <!-- メニュー -->
 
     <nav
         class="side-menu"
@@ -960,7 +954,7 @@
     >
 
         <h2>
-            メニュー
+            MENU
         </h2>
 
 
@@ -969,7 +963,7 @@
             class="menu-link"
             onclick="closeMenu()"
         >
-            🏠 ホーム
+            ホーム
         </a>
 
 
@@ -978,7 +972,7 @@
             class="menu-link"
             onclick="closeMenu()"
         >
-            🌱 ひろ鯖とは
+            ひろ鯖とは
         </a>
 
 
@@ -987,7 +981,7 @@
             class="menu-link"
             onclick="closeMenu()"
         >
-            🎮 参加方法
+            参加方法
         </a>
 
 
@@ -995,7 +989,7 @@
             href="rules.html"
             class="menu-link"
         >
-            📜 規約
+            規約
         </a>
 
 
@@ -1003,7 +997,7 @@
             href="mods.html"
             class="menu-link"
         >
-            🛠️ 使用可能MOD
+            使用可能MOD
         </a>
 
 
@@ -1011,16 +1005,14 @@
             href="commands.html"
             class="menu-link"
         >
-            📖 コマンド一覧
+            コマンド一覧
         </a>
 
     </nav>
 
 
 
-    <!-- =========================
-         ヘッダー
-    ========================= -->
+    <!-- ヘッダー -->
 
     <header id="home">
 
@@ -1032,18 +1024,16 @@
 
 
         <p>
-            Minecraftをみんなで楽しもう！
+            Minecraftを、もっと自由に。
         </p>
 
     </header>
 
 
 
-    <!-- =========================
-         メイン
-    ========================= -->
+    <!-- メイン -->
 
-    <main class="content">
+    <main>
 
 
         <!-- =========================
@@ -1062,7 +1052,7 @@
 
             <p>
 
-                ひろ鯖は2026年から始まった、
+                ひろ鯖は2026年から始まった
                 Minecraftサーバーです。
 
                 <br>
@@ -1074,29 +1064,21 @@
 
                 <br><br>
 
-                ひろ鯖では、
-                統合版・Java版を問わず参加できます。
-
-                <br>
-
-                サーバー独自の食べ物・武器・家具・
+                統合版・Java版を問わず参加でき、
+                サーバー独自の食べ物、武器、家具、
                 ブロックなど、
-                普通のMinecraftとはひと味違った
-                要素も楽しめます。
+                ひろ鯖ならではの要素を楽しめます。
 
                 <br><br>
 
-                さらに、経済システムやイベントなど、
-                長く遊んでも飽きにくい要素も用意しています。
+                経済システムやイベントなども用意し、
+                長く遊んでも楽しめるサーバーを
+                目指しています。
 
                 <br><br>
 
-                皆さんの参加が、
-                ひろ鯖の応援になります。
-
-                <br>
-
-                ぜひ一緒にひろ鯖を楽しみましょう！
+                ぜひ友達と一緒に、
+                ひろ鯖の世界を楽しんでください。
 
             </p>
 
@@ -1114,110 +1096,124 @@
         >
 
             <h2>
-                🎮 参加方法
+                参加方法
             </h2>
 
 
-
-            <!-- Java版 -->
-
-            <div class="join-box">
-
-                <p class="join-title">
-                    Java版
-                </p>
+            <p>
+                Java版・統合版のどちらからでも
+                参加できます。
+            </p>
 
 
-                <div class="address">
-
-                    <span class="address-text">
-                        mc.hirosaba.net
-                    </span>
+            <div class="join-list">
 
 
-                    <button
-                        class="copy-button"
-                        onclick="copyText(
-                            'mc.hirosaba.net',
-                            this
-                        )"
-                    >
-                        コピー
-                    </button>
+                <!-- Java版 -->
 
-                </div>
+                <div class="join-item">
+
+                    <h3>
+                        Java版
+                    </h3>
 
 
-                <div class="copy-message">
-                    コピーしました！
-                </div>
+                    <div class="address">
 
-            </div>
-
-
-
-            <!-- 統合版 -->
-
-            <div class="join-box">
-
-                <p class="join-title">
-                    統合版
-                </p>
+                        <span class="address-text">
+                            mc.hirosaba.net
+                        </span>
 
 
-                <div class="address">
+                        <button
+                            class="copy-button"
+                            onclick="copyText(
+                                'mc.hirosaba.net',
+                                this
+                            )"
+                        >
+                            コピー
+                        </button>
 
-                    <span class="address-text">
-                        mc.hirosaba.net
-                    </span>
+                    </div>
 
 
-                    <button
-                        class="copy-button"
-                        onclick="copyText(
-                            'mc.hirosaba.net',
-                            this
-                        )"
-                    >
-                        コピー
-                    </button>
+                    <div class="copy-message">
+                        コピーしました！
+                    </div>
 
                 </div>
 
 
-                <p>
-                    ポート：
-                    <strong>19132</strong>
-                </p>
+
+                <!-- 統合版 -->
+
+                <div class="join-item">
+
+                    <h3>
+                        統合版
+                    </h3>
 
 
-                <p>
-                    統合版はフレンド申請でも参加できます！
-                </p>
+                    <div class="address">
+
+                        <span class="address-text">
+                            mc.hirosaba.net
+                        </span>
 
 
-                <div class="address">
+                        <button
+                            class="copy-button"
+                            onclick="copyText(
+                                'mc.hirosaba.net',
+                                this
+                            )"
+                        >
+                            コピー
+                        </button>
 
-                    <span class="address-text">
-                        ここにフレンドの名前
-                    </span>
-
-
-                    <button
-                        class="copy-button"
-                        onclick="copyText(
-                            'ここにフレンドの名前',
-                            this
-                        )"
-                    >
-                        コピー
-                    </button>
-
-                </div>
+                    </div>
 
 
-                <div class="copy-message">
-                    コピーしました！
+                    <div class="copy-message">
+                        コピーしました！
+                    </div>
+
+
+                    <p class="port">
+                        ポート：19132
+                    </p>
+
+
+                    <p class="friend-note">
+                        統合版はフレンド申請でも参加できます！
+                    </p>
+
+
+                    <div class="address">
+
+                        <span class="address-text">
+                            ここにフレンドの名前
+                        </span>
+
+
+                        <button
+                            class="copy-button"
+                            onclick="copyText(
+                                'ここにフレンドの名前',
+                                this
+                            )"
+                        >
+                            コピー
+                        </button>
+
+                    </div>
+
+
+                    <div class="copy-message">
+                        コピーしました！
+                    </div>
+
                 </div>
 
             </div>
@@ -1230,34 +1226,31 @@
              規約
         ========================= -->
 
-        <section
-            class="section"
-        >
+        <section class="section">
 
             <h2>
-                📜 規約
+                規約
             </h2>
 
 
             <p>
 
-                ひろ鯖を利用するすべての方が、
-                安心して楽しく遊べるように
-                ルールを定めています。
+                ひろ鯖を利用するすべての方に
+                安心して楽しんでいただくため、
+                サーバーのルールを定めています。
 
-                <br><br>
+                <br>
 
-                サーバールール・ゲームルールを
-                必ず確認してからご参加ください。
+                ご参加の前に必ずご確認ください。
 
             </p>
 
 
             <a
                 href="rules.html"
-                class="button"
+                class="page-link"
             >
-                規約を見る
+                規約を見る →
             </a>
 
         </section>
@@ -1265,38 +1258,33 @@
 
 
         <!-- =========================
-             使用可能MOD
+             MOD
         ========================= -->
 
-        <section
-            class="section"
-        >
+        <section class="section">
 
             <h2>
-                🛠️ 使用可能MOD
+                使用可能MOD
             </h2>
 
 
             <p>
 
-                ひろ鯖では、
-                サーバーのルールに従った
-                クライアント・MODを使用できます。
+                ひろ鯖で使用できる
+                クライアント・MODを掲載しています。
 
-                <br><br>
+                <br>
 
-                使用できるMODや禁止されている
-                機能については、
-                使用可能MOD一覧をご確認ください。
+                使用前に必ず一覧をご確認ください。
 
             </p>
 
 
             <a
                 href="mods.html"
-                class="button"
+                class="page-link"
             >
-                使用可能MODを見る
+                使用可能MODを見る →
             </a>
 
         </section>
@@ -1307,28 +1295,26 @@
              コマンド
         ========================= -->
 
-        <section
-            class="section"
-        >
+        <section class="section">
 
             <h2>
-                📖 コマンド一覧
+                コマンド一覧
             </h2>
 
 
             <p>
 
-                ひろ鯖で使用できる
-                コマンドを確認できます。
+                ひろ鯖で利用できる
+                コマンドをまとめています。
 
             </p>
 
 
             <a
                 href="commands.html"
-                class="button"
+                class="page-link"
             >
-                コマンド一覧を見る
+                コマンド一覧を見る →
             </a>
 
         </section>
@@ -1338,13 +1324,13 @@
 
 
 
-    <!-- =========================
-         フッター
-    ========================= -->
+    <!-- フッター -->
 
     <footer>
 
         © 2026 ひろ鯖
+        <br>
+        HiroSaba Official Website
 
     </footer>
 
@@ -1353,9 +1339,7 @@
     <script>
 
 
-        /* =========================
-           メニュー開閉
-        ========================= */
+        /* メニュー */
 
         function toggleMenu() {
 
@@ -1367,10 +1351,6 @@
         }
 
 
-        /* =========================
-           メニューを閉じる
-        ========================= */
-
         function closeMenu() {
 
             const menu =
@@ -1381,9 +1361,7 @@
         }
 
 
-        /* =========================
-           コピー機能
-        ========================= */
+        /* コピー */
 
         function copyText(text, button) {
 
@@ -1391,25 +1369,28 @@
                 .writeText(text)
                 .then(function() {
 
-                    const box =
-                        button.closest(".join-box");
+                    const item =
+                        button.closest(".join-item");
 
                     const message =
-                        box.querySelector(".copy-message");
+                        item.querySelector(
+                            ".copy-message"
+                        );
 
-                    message.style.display = "block";
+                    message.style.display =
+                        "block";
 
 
                     setTimeout(function() {
 
-                        message.style.display = "none";
+                        message.style.display =
+                            "none";
 
                     }, 2000);
 
                 });
 
         }
-
 
     </script>
 
